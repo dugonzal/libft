@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/01 14:30:45 by neo               #+#    #+#             */
-/*   Updated: 2022/04/06 06:59:38 by dugonzal         ###   ########.fr       */
+/*   Created: 2022/06/09 14:00:24 by dugonzal          #+#    #+#             */
+/*   Updated: 2022/06/09 14:08:34 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,8 @@ int	ft_toupper(int c)
 	return (c);
 }
 
-/* convierte letras minisculas a mayusculas*/
+/*int	main(void)
+{
+	printf("%d", toupper('a'));
+}
+*/

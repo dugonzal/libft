@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/01 18:38:37 by neo               #+#    #+#             */
-/*   Updated: 2022/05/25 10:58:12 by dugonzal         ###   ########.fr       */
+/*   Created: 2022/06/09 14:24:09 by dugonzal          #+#    #+#             */
+/*   Updated: 2022/06/09 15:02:46 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int		str_len;
-	char	*pointer;
-	char	*result;
+	size_t	len_s;
+	char	*str;
 
-	result = 0;
-	pointer = (((char *) s));
-	str_len = 0;
-	while (s[str_len])
-	{
-		if (s[str_len] == (((unsigned char)c)))
-			result = &pointer[str_len];
-		str_len++;
-	}
-	if (s[str_len] == ((char)c))
-		result = &pointer[str_len];
-	return (result);
+	if (!s)
+		return (0);
+	str = (char *)s;
+	len_s = ft_strlen(s) - 1;
+	while (str[len_s] != c && len_s > 0)
+		len_s--;
+	if (str[len_s] == c)
+		return (str + len_s);
+	return (str);
 }
-/* busca la ultima posicion de c en la cadena y te hasta el final */
+
+int	main(void)
+{
+	printf("%s", ft_strrchr("amparo", 'a'));
+}

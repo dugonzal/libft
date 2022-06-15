@@ -5,36 +5,42 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/30 19:33:34 by neo               #+#    #+#             */
-/*   Updated: 2022/05/25 10:59:46 by dugonzal         ###   ########.fr       */
+/*   Created: 2022/06/09 08:26:54 by dugonzal          #+#    #+#             */
+/*   Updated: 2022/06/09 09:23:52 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t			i;
-	unsigned char	*d;
-	unsigned char	*s;
+	size_t	i;
 
-	if (!dest && !src)
-		return (0);
-	i = 0;
-	d = (unsigned char *)dest;
-	s = (unsigned char *)src;
-	if (s < d)
-	{
-		while (n--)
-			d[n] = s[n];
-	}
-	else
-	{
-		while (i < n)
+	if (!dst && !dst)
+		return (NULL);
+	i = 0;	
+	if (src > dst)
 		{
-			d[i] = s[i];
-			i++;
+			//printf ("%zu", ft_strlen(src));
+			while (len--)
+				((char *)dst)[len] = ((char *)src)[i];
 		}
-	}
-	return (dest);
+	else
+		ft_memcpy(dst, src, len);
+	return (dst);
 }
+
+/*
+int	main(void)
+{
+	char dst[4];
+	const char *s = ft_memmove(dst, "hola", 3);;
+
+	printf ("%s", s);
+}
+*/
+
+
+/*
+ * cuando pomemos la condiciom de si la fuente es mayor al destino tenemos que meterle lem em vez de i
+ */

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/28 18:49:48 by dugonzal          #+#    #+#             */
-/*   Updated: 2022/04/06 09:23:03 by dugonzal         ###   ########.fr       */
+/*   Created: 2022/06/09 00:50:51 by dugonzal          #+#    #+#             */
+/*   Updated: 2022/06/09 08:03:21 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,19 @@
 
 int	ft_isalnum(int c)
 {
-	if (c >= '0' && c <= '9')
+	if (ft_isalpha(c) || ft_isdigit(c))
 		return (1);
-	if (c >= 'a' && c <= 'z')
-		return (1);
-	if (c >= 'A' && c <= 'Z')
-		return (1);
-	return (0);
+	else
+		return (0);
 }
+
+
+/*
+ * (@param) 
+ *
+ * (@funcionamiento): con esta funcion comprabamos si el parametro c es alfanumerico, si es el caso retornamos uno, y si el parametro c no es alfanumerico retornamos 0.
+ *
+ * la clave de programar es llamar  a las funcionciones anteriores
+ * 
+ *
+*/

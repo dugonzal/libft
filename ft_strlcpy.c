@@ -5,27 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/21 17:11:37 by dugonzal          #+#    #+#             */
-/*   Updated: 2022/05/24 20:07:11 by dugonzal         ###   ########.fr       */
+/*   Created: 2022/06/09 09:25:36 by dugonzal          #+#    #+#             */
+/*   Updated: 2022/06/09 09:43:20 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char	*dst, const char	*src, size_t dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 
+	if (!dst && !src)
+		return (0);
 	i = 0;
-	if (dstsize > 0)
-	{
-		while (src[i] && i < (dstsize - 1))
+		while (i < size)
 		{
-			dst[i] = src[i];
+			dst[i] = (char)src[i];
 			i++;
 		}
 		dst[i] = 0;
-	}
-	i = ft_strlen(src);
+		i = ft_strlen(src);
 	return (i);
 }
+
+/*int	main(void)
+{
+	char dst[5];
+	const char *s = "echo";
+	printf("%lu", ft_strlcpy(dst, s, 4));
+}
+*/

@@ -5,31 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/28 22:33:24 by dugonzal          #+#    #+#             */
-/*   Updated: 2022/05/17 07:21:43 by dugonzal         ###   ########.fr       */
+/*   Created: 2022/06/09 07:59:26 by dugonzal          #+#    #+#             */
+/*   Updated: 2022/06/09 08:28:43 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-	esta funcion nos pasa un string void (str), y tenemos que comnvertirlo
-	creamos una variable para hecer la conversion,
-	la igualamos de esta manera d = (char *)str;
-*/
-
 #include "libft.h"
 
-void	*ft_memset(void *str, int c, size_t len)
+void	*ft_memset(void *s, int c, size_t n)
 {
 	size_t	i;
 
+	if (!s)
+		return (0);
 	i = 0;
-	while (i < len)
+	while (i < n)
 	{
-		((char *)str)[i] = c;
+		(char *)s[i] = c;
 		i++;
 	}
-	return (str);
+	return (s);
 }
-
-/*  The memset() function writes len bytes of value c
-(converted to an unsigned char) to the string b. */

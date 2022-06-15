@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/02 13:36:51 by dugonzal          #+#    #+#             */
-/*   Updated: 2022/05/25 10:02:58 by dugonzal         ###   ########.fr       */
+/*   Created: 2022/06/09 08:19:24 by dugonzal          #+#    #+#             */
+/*   Updated: 2022/06/09 08:21:53 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@ void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
 
+	if (!s)
+		return (NULL);
 	i = 0;
-	while (i < n)
-	{
-		((char *)s)[i] = 0;
-		i++;
-	}
+	while (s[i] != 0)
+		{
+			(char *)s[i] = 0;
+			i++;
+		}
 }

@@ -3,20 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/01 15:03:04 by neo               #+#    #+#             */
-/*   Updated: 2022/04/06 06:58:59 by dugonzal         ###   ########.fr       */
+/*   Created: 2022/06/09 13:51:10 by dugonzal          #+#    #+#             */
+/*   Updated: 2022/06/11 19:26:04 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include	"libft.h"
 
 int	ft_tolower(int c)
 {
-	if (c >= 'A' && c <= 'Z')
+	if (c >= 65 && c <= 90)
 		c += 32;
 	return (c);
 }
 
-/* convierte letras mayusculas a minisculas*/
+/*int	main(void)
+{
+	int c = 'Z';
+	printf("%d", tolower(c));
+}*/

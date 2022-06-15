@@ -5,25 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/28 20:00:25 by dugonzal          #+#    #+#             */
-/*   Updated: 2022/05/20 13:32:39 by dugonzal         ###   ########.fr       */
+/*   Created: 2022/06/09 07:54:23 by dugonzal          #+#    #+#             */
+/*   Updated: 2022/06/09 08:08:25 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 
+	if (!s)
+		return (0);
 	i = 0;
-	while (str[i])
+	while (s[i] != 0)
 		i++;
 	return (i);
 }
 
 /*
-
-* tambien se peude contar directamente en la condicion del while
-
+int main(void)
+{
+	printf("%zu", ft_strlen("hola"));
+}
 */
