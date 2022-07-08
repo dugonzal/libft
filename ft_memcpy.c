@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 08:22:44 by dugonzal          #+#    #+#             */
-/*   Updated: 2022/06/09 08:42:04 by dugonzal         ###   ########.fr       */
+/*   Updated: 2022/07/08 16:15:16 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t	i;
 
@@ -20,9 +20,9 @@ void *ft_memcpy(void *dst, const void *src, size_t n)
 		return (NULL);
 	i = 0;
 	while (i < n)
-		{
-			((char *)dst)[i] = ((char *)src)[i];
-			i++;
-		}
+	{
+		((char *)dst)[i] = ((char *)src)[i];
+		i++;
+	}
 	return (dst);
 }

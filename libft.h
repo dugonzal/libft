@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 08:13:44 by dugonzal          #+#    #+#             */
-/*   Updated: 2022/06/09 14:24:40 by dugonzal         ###   ########.fr       */
+/*   Updated: 2022/07/08 16:17:00 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	LIBFT_H
-#define	LIBFT_H
+#ifndef LIBFT_H
+# define LIBFT_H
 
 # include <stdio.h>
 # include <ctype.h>
@@ -32,6 +32,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 char	*ft_strchr(const char *s, int c);
-char	*ft_strrchr(const char * s , int c );
+char	*ft_strrchr(const char *s, int c);
 
 #endif
