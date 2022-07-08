@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 09:51:32 by dugonzal          #+#    #+#             */
-/*   Updated: 2022/06/09 11:12:52 by dugonzal         ###   ########.fr       */
+/*   Updated: 2022/07/08 16:29:18 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 /*size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t
+	size_t	i;
 }*/
 
 int	main(void)
 {
 	char dst[5];
-	printf("%lu", strlcat(dst, "hola", 3));
+	printf("%u", strlcat(dst, "hola", 3));
 }

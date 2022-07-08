@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 08:13:44 by dugonzal          #+#    #+#             */
-/*   Updated: 2022/07/08 16:17:00 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/07/08 16:52:55 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdio.h>
 # include <ctype.h>
+# include <string.h>
 # include <string.h>
 
 int		ft_isalpha(int c);

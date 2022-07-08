@@ -3,7 +3,7 @@ NAME = libft.a
 SRC = isalpha.c /
 
 
-OBJ = (src:.c:.o)
+OBJ = (SRC=.c:.o)
 
 FLAGS = -Wall -Werror -Wextra
 
@@ -11,10 +11,10 @@ RM = rm -rf
 
 CC = gcc
 
-all: $(NAME)
+all:
 
-$(NAME): $(OBJ)
-	$(CC) $(FLAGS) $(OBJ)  $(NAME)
+	$(NAME): $(OBJ)
+		$(CC) $(FLAGS) $(SRC) -o $(NAME)
 
 clean:
 	$(RM) $(OBJ)
