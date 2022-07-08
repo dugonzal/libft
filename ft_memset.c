@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 07:59:26 by dugonzal          #+#    #+#             */
-/*   Updated: 2022/06/09 08:28:43 by dugonzal         ###   ########.fr       */
+/*   Updated: 2022/07/08 16:21:25 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ void	*ft_memset(void *s, int c, size_t n)
 		(char *)s[i] = c;
 		i++;
 	}
+	s[i] = 0;
 	return (s);
 }

@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 13:51:10 by dugonzal          #+#    #+#             */
-/*   Updated: 2022/06/11 19:26:04 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/07/08 16:21:46 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,3 @@ int	ft_tolower(int c)
 		c += 32;
 	return (c);
 }
-
-/*int	main(void)
-{
-	int c = 'Z';
-	printf("%d", tolower(c));
-}*/

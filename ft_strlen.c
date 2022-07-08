@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 07:54:23 by dugonzal          #+#    #+#             */
-/*   Updated: 2022/06/09 08:08:25 by dugonzal         ###   ########.fr       */
+/*   Updated: 2022/07/08 16:21:38 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,3 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
-
-/*
-int main(void)
-{
-	printf("%zu", ft_strlen("hola"));
-}
-*/

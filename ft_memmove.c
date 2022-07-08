@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 08:26:54 by dugonzal          #+#    #+#             */
-/*   Updated: 2022/07/08 16:15:52 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/07/08 16:20:59 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	{
 		while (len--)
 			((char *)dst)[len] = ((char *)src)[i];
+		dst[i] = 0;
 	}
 	else
 		ft_memcpy(dst, src, len);

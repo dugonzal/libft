@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 14:00:24 by dugonzal          #+#    #+#             */
-/*   Updated: 2022/06/09 14:08:34 by dugonzal         ###   ########.fr       */
+/*   Updated: 2022/07/08 16:21:50 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,3 @@ int	ft_toupper(int c)
 		c -= 32;
 	return (c);
 }
-
-/*int	main(void)
-{
-	printf("%d", toupper('a'));
-}
-*/

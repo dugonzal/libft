@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 00:50:51 by dugonzal          #+#    #+#             */
-/*   Updated: 2022/06/09 08:03:21 by dugonzal         ###   ########.fr       */
+/*   Updated: 2022/07/08 16:20:07 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,12 @@ int	ft_isalnum(int c)
 		return (0);
 }
 
-
 /*
- * (@param) 
+ * (@param)
  *
  * (@funcionamiento): con esta funcion comprabamos si el parametro c es alfanumerico, si es el caso retornamos uno, y si el parametro c no es alfanumerico retornamos 0.
  *
  * la clave de programar es llamar  a las funcionciones anteriores
- * 
+ *
  *
 */

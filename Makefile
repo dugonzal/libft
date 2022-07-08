@@ -2,6 +2,7 @@ NAME = libft.a
 
 SRC = isalpha.c /
 
+
 OBJ = (src:.c:.o)
 
 FLAGS = -Wall -Werror -Wextra

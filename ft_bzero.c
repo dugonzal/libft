@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 08:19:24 by dugonzal          #+#    #+#             */
-/*   Updated: 2022/06/09 08:21:53 by dugonzal         ###   ########.fr       */
+/*   Updated: 2022/07/08 16:20:00 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	ft_bzero(void *s, size_t n)
 		return (NULL);
 	i = 0;
 	while (s[i] != 0)
-		{
-			(char *)s[i] = 0;
-			i++;
-		}
+	{
+		(char *)s[i] = 0;
+		i++;
+	}
 }
