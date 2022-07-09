@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 08:19:24 by dugonzal          #+#    #+#             */
-/*   Updated: 2022/07/09 17:29:34 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/07/09 17:50:11 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ void	ft_bzero(void *s, size_t n)
 	size_t	i;
 
 	if (!s)
-		return (NULL);
+		exit ;
 	i = 0;
 	while (i < n)
 	{
-		(char *)s[i] = 0;
+		((char *)s)[i] = 0;
 		i++;
 	}
 }

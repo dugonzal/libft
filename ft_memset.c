@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 07:59:26 by dugonzal          #+#    #+#             */
-/*   Updated: 2022/07/08 16:21:25 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/07/09 17:48:19 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		(char *)s[i] = c;
+		((char *)s)[i] = c;
 		i++;
 	}
-	s[i] = 0;
-	return (s);
 }

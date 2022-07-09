@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 08:22:44 by dugonzal          #+#    #+#             */
-/*   Updated: 2022/07/08 16:20:39 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/07/09 17:50:32 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,5 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 		((char *)dst)[i] = ((char *)src)[i];
 		i++;
 	}
-	des[i] = 0;
 	return (dst);
 }

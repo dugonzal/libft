@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 07:52:45 by dugonzal          #+#    #+#             */
-/*   Updated: 2022/06/09 07:54:04 by dugonzal         ###   ########.fr       */
+/*   Updated: 2022/07/09 17:47:18 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 int	ft_isprint(int c)
 {
 	if (c < 32 || c > 127)
-		reuturn (0);
+		return (0);
 	return (1);
 }
