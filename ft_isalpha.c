@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 00:40:11 by dugonzal          #+#    #+#             */
-/*   Updated: 2022/06/09 08:08:13 by dugonzal         ###   ########.fr       */
+/*   Updated: 2022/07/09 17:08:56 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,3 @@ int	ft_isalpha(int c)
 		return (0);
 	return (1);
 }
-
-/*
-	comprobamos si el parametro c es alphabetico mayusculas y minisculas
- */
