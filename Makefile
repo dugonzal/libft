@@ -6,7 +6,7 @@
 #    By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/09 17:09:59 by ciclo             #+#    #+#              #
-#    Updated: 2022/07/09 17:54:27 by ciclo            ###   ########.fr        #
+#    Updated: 2022/07/09 20:18:38 by ciclo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,6 @@ AR = ar rc
 
 all : $(NAME) # regla de relink del make si ya esta creado el name no volvera a crearlo
 
-
  $(NAME): $(OBJ)
 
 #$(CC) $(FLAGS) $(OBJ) -c $(NAME)
@@ -49,4 +48,5 @@ re: fclean all
 
 	@echo "\n re fclean all done\n"
 
-.PHONY:
+.PHONY:  all clean fclean re
+	@echo "\n phony done \n"

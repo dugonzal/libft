@@ -1,5 +1,5 @@
 {
-	"C_Cpp.errorSquiggles": "Disabled",
+	"C_Cpp.errorSquiggles": "Enabled",
 	"files.associations": {
 		"ctype.h": "c",
 		"_ctype.h": "c"
