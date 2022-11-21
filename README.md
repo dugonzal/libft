@@ -60,7 +60,7 @@ To clean all files generated while doing a make, go to the path and run:
 ```shell
  make fclean
 ```
-
+# Examples
 ```c
 #include "libft.h"
 
