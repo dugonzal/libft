@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 17:59:05 by ciclo             #+#    #+#             */
-/*   Updated: 2022/12/01 17:04:51 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/12/11 14:00:26 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <string.h>
 # include <stdio.h>
 # include "../ft_printf/include/ft_printf.h"
+# include "../src/get_next_line/include/get_next_line.h"
 
 typedef struct s_list
 {

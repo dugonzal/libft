@@ -6,7 +6,7 @@
 #    By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/12 01:54:25 by ciclo             #+#    #+#              #
-#    Updated: 2022/11/17 14:40:58 by ciclo            ###   ########.fr        #
+#    Updated: 2022/12/11 14:06:41 by ciclo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,8 @@ AR			=	ar rcs
 
 
 #Sources
+gnl_dir		=	get_next_line/
+gnl			=	get_next_line get_next_line_utils
 
 FTIS_DIR	=	ft_is/
 FTIS		=	ft_isalnum ft_isalpha ft_isascii ft_isdigit ft_isprint
@@ -47,6 +49,7 @@ SRC_FILES+=$(addprefix $(FTPUT_DIR),$(FTPUT))
 SRC_FILES+=$(addprefix $(FTTO_DIR),$(FTTO))
 SRC_FILES+=$(addprefix $(FTSTR_DIR),$(FTSTR))
 SRC_FILES+=$(addprefix $(FTLST_DIR),$(FTLST))
+SRC_FILES+=$(addprefix $(gnl_dir),$(gnl))
 
 SRCS 		= 	$(addprefix $(SRCS_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJS 		= 	$(addprefix $(OBJS_DIR), $(addsuffix .o, $(SRC_FILES)))
@@ -72,6 +75,7 @@ $(OBJSF):#  create the directory for the objects if it doesn't exist mkdir -p pa
 			@mkdir	-p $(OBJS_DIR)$(FTTO_DIR)
 			@mkdir	-p $(OBJS_DIR)$(FTSTR_DIR)
 			@mkdir  -p $(OBJS_DIR)$(FTLST_DIR)
+			@mkdir -p $(OBJS_DIR)$(gnl_dir)
 
 all:		$(NAME)
 
