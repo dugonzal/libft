@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:13:10 by ciclo             #+#    #+#             */
-/*   Updated: 2022/09/12 01:13:47 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/11/07 17:24:00 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,6 @@ void	ft_putnbr_fd(int n, int fd)
 		write(fd, "-", 1);
 	}
 	if (n2 > 9)
-	{
 		ft_putnbr_fd(n2 / 10, fd);
-		ft_putchar_fd((n2 % 10) + '0', fd);
-	}
-	else
-		ft_putchar_fd(n2 + '0', fd);
+	ft_putchar_fd(n2 + '0', fd);
 }

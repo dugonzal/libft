@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:23:06 by ciclo             #+#    #+#             */
-/*   Updated: 2022/09/12 01:23:22 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/11/07 17:25:02 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	unsigned int	j;
 
 	if (!s1 || !s2)
-		return (0);
+		return (NULL);
 	s3 = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!s3)
 		return (0);

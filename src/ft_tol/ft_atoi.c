@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:49:48 by ciclo             #+#    #+#             */
-/*   Updated: 2022/09/12 01:50:37 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/12/03 13:31:59 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,25 +18,18 @@
 /// @return The converted int.
 int	ft_atoi(const char *str)
 {
-	int	cnt;
+	int	nbr;
 	int	neg;
-	int	num;
 
-	cnt = 0;
+	nbr = 0;
 	neg = 1;
-	num = 0;
-	if (!str)
-		return (0);
-	while ((str[cnt] >= '\t' && str[cnt] <= '\r') || str[cnt] == ' ')
-		cnt++;
-	if (str[cnt] == '-')
+	while (*str == ' ' || (*str >= 9 && *str <= 13))
+		str++;
+	if (*str == '-')
 		neg = -1;
-	if (str[cnt] == '+' || str[cnt] == '-')
-		cnt++;
-	while (str[cnt] >= '0' && str[cnt] <= '9')
-	{
-		num = (str[cnt] - '0') + (num * 10);
-		cnt++;
-	}
-	return (num * neg);
+	if (*str == '+' || *str == '-')
+		str++;
+	while (*str >= '0' && *str <= '9' && *str)
+		nbr = nbr * 10 + *str++ - 48;
+	return (nbr * neg);
 }
