@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/21 11:02:15 by ciclo-d           #+#    #+#             */
-/*   Updated: 2022/12/12 19:52:48 by ciclo            ###   ########.fr       */
+/*   Created: 2022/07/08 12:25:56 by ciclo             #+#    #+#             */
+/*   Updated: 2022/12/12 19:53:35 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# define BUFFER_SIZE 100000
-# include <stdio.h>
-# include <unistd.h>
-# include <fcntl.h>
-# include <stdlib.h>
-# include <string.h>
-# include "../../../include/libft.h"
+#include "include/libft.h"
 
-int		ft_count(char *str);
-char	*get_next_line(int fd);
-char	*ft_find(char *full, char c);
-char	*ft_join(char *full, char *buffer);
-int		ft_slen(char *string, char c);
-
-#endif
+int	main(int argc, char **argv)
+{
+	char	*s;
+	int		fd;
+	int		c;
+	(void)argc;
+	fd = open(argv[1], O_RDONLY);
+	c = 2 ;
+	while (c--)
+	{
+		s = get_next_line(fd);
+		printf("{%s}\n", s);
+		free (s);
+	}
+	close(fd);
+	return (0);
+}
