@@ -6,13 +6,15 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 11:02:15 by ciclo-d           #+#    #+#             */
-/*   Updated: 2022/12/12 19:52:48 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/12/12 20:01:34 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-# define BUFFER_SIZE 100000
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 # include <stdio.h>
 # include <unistd.h>
 # include <fcntl.h>
