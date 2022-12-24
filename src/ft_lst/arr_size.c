@@ -6,13 +6,13 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 14:31:45 by ciclo             #+#    #+#             */
-/*   Updated: 2022/12/23 14:35:36 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/12/23 20:05:03 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
-size_t arr_size(char **str)
+size_t	arr_size(char **str)
 {
 	size_t i;
 
