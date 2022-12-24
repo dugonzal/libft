@@ -6,7 +6,7 @@
 #    By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/12 01:54:25 by ciclo             #+#    #+#              #
-#    Updated: 2022/12/24 13:40:36 by ciclo            ###   ########.fr        #
+#    Updated: 2022/12/24 18:13:50 by ciclo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,9 @@ AR			=	ar rcs
 
 
 #Sources
+err_dir		= err_dir
+err_dir		= err
+
 gnl_dir		=	get_next_line/
 gnl			=	get_next_line get_next_line_utils
 
@@ -50,6 +53,7 @@ SRC_FILES+=$(addprefix $(FTTO_DIR),$(FTTO))
 SRC_FILES+=$(addprefix $(FTSTR_DIR),$(FTSTR))
 SRC_FILES+=$(addprefix $(FTLST_DIR),$(FTLST))
 SRC_FILES+=$(addprefix $(gnl_dir),$(gnl))
+SRC_FILES+=$(addprefix $(err_dir), $(err))
 
 SRCS 		= 	$(addprefix $(SRCS_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJS 		= 	$(addprefix $(OBJS_DIR), $(addsuffix .o, $(SRC_FILES)))
@@ -75,7 +79,8 @@ $(OBJSF):#  create the directory for the objects if it doesn't exist mkdir -p pa
 			@mkdir	-p $(OBJS_DIR)$(FTTO_DIR)
 			@mkdir	-p $(OBJS_DIR)$(FTSTR_DIR)
 			@mkdir  -p $(OBJS_DIR)$(FTLST_DIR)
-			@mkdir -p $(OBJS_DIR)$(gnl_dir)
+			@mkdir	-p $(OBJS_DIR)$(gnl_dir)
+			@mkdir	-p $(OBJS_DIR)$(err_dir)
 
 all:		$(NAME)
 
