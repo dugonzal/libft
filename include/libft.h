@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 17:59:05 by ciclo             #+#    #+#             */
-/*   Updated: 2022/12/25 07:51:12 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/12/25 08:15:55 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,7 @@ void	err(char *str);
 // math
 
 int		is_power_of_2(unsigned int n);
-
+// ft_num
+int		max(int *tab, int len);
+int		min(int *tab, int len);
 #endif
