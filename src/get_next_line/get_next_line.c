@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 23:11:17 by dugonzal          #+#    #+#             */
-/*   Updated: 2022/12/25 12:46:33 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/12/25 12:50:13 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,7 @@ char	*ft_read(char *str, int fd)
 	while (rd != 0 && (!ft_find(str, '\n')))
 	{
 		rd = read(fd, buffer, BUFFER_SIZE);
-		if (!rd && !str)
-			return (ft_free(buffer));
-		if (rd == -1)
+		if ((!rd && !str) || rd == -1)
 			return (ft_free(buffer));
 		buffer[rd] = '\0';
 		str = ft_join(str, buffer);
