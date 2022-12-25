@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 08:13:08 by ciclo             #+#    #+#             */
-/*   Updated: 2022/12/25 08:32:40 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/12/25 09:35:16 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 /// @return numero minirmo encontrado en el array
 int	min(int *tab, int len)
 {
-	int tmp;
+	int	tmp;
 
 	if (len <= 0 || !tab)
 		return (0);
