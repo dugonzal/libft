@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 17:59:05 by ciclo             #+#    #+#             */
-/*   Updated: 2022/12/25 07:17:58 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/12/25 07:51:12 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,8 @@ int		ft_toupper(int c);
 
 // errr
 void	err(char *str);
+// math
+
+int		is_power_of_2(unsigned int n);
 
 #endif

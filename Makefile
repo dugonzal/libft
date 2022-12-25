@@ -6,7 +6,7 @@
 #    By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/12 01:54:25 by ciclo             #+#    #+#              #
-#    Updated: 2022/12/25 07:18:21 by ciclo            ###   ########.fr        #
+#    Updated: 2022/12/25 07:56:55 by ciclo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,11 @@ AR			=	ar rcs
 
 
 #Sources
-err_dir		= err_dir
-err_dir		= err
+math_dir	=	math/
+math		=	is_power_of_2
+
+err_dir		=	err/
+err			=	err is_power_of_2
 
 gnl_dir		=	get_next_line/
 gnl			=	get_next_line get_next_line_utils
@@ -46,18 +49,18 @@ FTLST_DIR	=	ft_lst/
 FTLST		=	ft_lstadd_back ft_lstadd_front ft_lstclear ft_lstdelone \
 				ft_lstiter ft_lstlast ft_lstmap ft_lstnew ft_lstsize
 
-SRC_FILES+=$(addprefix $(FTIS_DIR),$(FTIS))
-SRC_FILES+=$(addprefix $(FTMEM_DIR),$(FTMEM))
-SRC_FILES+=$(addprefix $(FTPUT_DIR),$(FTPUT))
-SRC_FILES+=$(addprefix $(FTTO_DIR),$(FTTO))
-SRC_FILES+=$(addprefix $(FTSTR_DIR),$(FTSTR))
-SRC_FILES+=$(addprefix $(FTLST_DIR),$(FTLST))
-SRC_FILES+=$(addprefix $(gnl_dir),$(gnl))
-SRC_FILES+=$(addprefix $(err_dir), $(err))
+SRC_FILES	+=	$(addprefix $(FTIS_DIR),$(FTIS))
+SRC_FILES	+=	$(addprefix $(FTMEM_DIR),$(FTMEM))
+SRC_FILES	+=	$(addprefix $(FTPUT_DIR),$(FTPUT))
+SRC_FILES	+=	$(addprefix $(FTTO_DIR),$(FTTO))
+SRC_FILES	+=	$(addprefix $(FTSTR_DIR),$(FTSTR))
+SRC_FILES	+=	$(addprefix $(FTLST_DIR),$(FTLST))
+SRC_FILES	+=	$(addprefix $(gnl_dir),$(gnl))
+SRC_FILES	+=	$(addprefix $(err_dir),$(err))
+SRC_FILES	+=	$(addprefix $(math_dir),$(math))
 
 SRCS 		= 	$(addprefix $(SRCS_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJS 		= 	$(addprefix $(OBJS_DIR), $(addsuffix .o, $(SRC_FILES)))
-
 
 OBJSF		=	.cache_exists
 
@@ -81,6 +84,7 @@ $(OBJSF):#  create the directory for the objects if it doesn't exist mkdir -p pa
 			@mkdir  -p $(OBJS_DIR)$(FTLST_DIR)
 			@mkdir	-p $(OBJS_DIR)$(gnl_dir)
 			@mkdir	-p $(OBJS_DIR)$(err_dir)
+			@mkdir	-p $(OBJS_DIR)$(math_dir)
 
 all:		$(NAME)
 
