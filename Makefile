@@ -6,7 +6,7 @@
 #    By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/12 01:54:25 by ciclo             #+#    #+#              #
-#    Updated: 2022/12/25 07:56:55 by ciclo            ###   ########.fr        #
+#    Updated: 2022/12/25 08:01:11 by ciclo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ math_dir	=	math/
 math		=	is_power_of_2
 
 err_dir		=	err/
-err			=	err is_power_of_2
+err			=	err
 
 gnl_dir		=	get_next_line/
 gnl			=	get_next_line get_next_line_utils
