@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 17:59:05 by ciclo             #+#    #+#             */
-/*   Updated: 2022/12/24 18:15:47 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/12/25 07:17:58 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 size_t	ft_strcspn(const char *s, const char *reject);
+char	*ft_strpbrk(const char *s1, const char *s2);
 
 // ft_mem
 
