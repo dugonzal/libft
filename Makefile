@@ -6,7 +6,7 @@
 #    By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/12 01:54:25 by ciclo             #+#    #+#              #
-#    Updated: 2022/12/25 09:24:15 by ciclo            ###   ########.fr        #
+#    Updated: 2022/12/25 09:43:45 by ciclo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ AR			=	ar rcs
 
 #Sources
 octet_dir	=	octet/
-octet		=	print_bits
+octet		=	print_bits reverse_bits swap_bits
 
 math_dir	=	math/
 math		=	is_power_of_2
