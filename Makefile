@@ -6,7 +6,7 @@
 #    By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/12 01:54:25 by ciclo             #+#    #+#              #
-#    Updated: 2022/12/25 08:16:05 by ciclo            ###   ########.fr        #
+#    Updated: 2022/12/25 09:24:15 by ciclo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,9 @@ AR			=	ar rcs
 
 
 #Sources
+octet_dir	=	octet/
+octet		=	print_bits
+
 math_dir	=	math/
 math		=	is_power_of_2
 
@@ -62,6 +65,8 @@ SRC_FILES	+=	$(addprefix $(gnl_dir),$(gnl))
 SRC_FILES	+=	$(addprefix $(err_dir),$(err))
 SRC_FILES	+=	$(addprefix $(math_dir),$(math))
 SRC_FILES	+=	$(addprefix $(num_dir),$(ft_num))
+SRC_FILES	+=	$(addprefix $(octet_dir),$(octet))
+
 
 SRCS 		= 	$(addprefix $(SRCS_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJS 		= 	$(addprefix $(OBJS_DIR), $(addsuffix .o, $(SRC_FILES)))
@@ -90,6 +95,7 @@ $(OBJSF):#  create the directory for the objects if it doesn't exist mkdir -p pa
 			@mkdir	-p $(OBJS_DIR)$(err_dir)
 			@mkdir	-p $(OBJS_DIR)$(math_dir)
 			@mkdir	-p $(OBJS_DIR)$(num_dir)
+			@mkdir	-p $(OBJS_DIR)$(octet_dir)
 
 all:		$(NAME)
 
