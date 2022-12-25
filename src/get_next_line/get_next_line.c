@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 23:11:17 by dugonzal          #+#    #+#             */
-/*   Updated: 2022/12/25 12:50:13 by ciclo            ###   ########.fr       */
+/*   Updated: 2022/12/25 12:52:32 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_free(char *buffer)
 	return (NULL);
 }
 
-char	*ft_line(char *str)
+static char	*ft_line(char *str)
 {
 	char	*tmp;
 	int		i;
@@ -42,7 +42,7 @@ char	*ft_line(char *str)
 	return (tmp);
 }
 
-char	*ft_read(char *str, int fd)
+static char	*ft_read(char *str, int fd)
 {
 	char	*buffer;
 	ssize_t	rd;
@@ -63,7 +63,7 @@ char	*ft_read(char *str, int fd)
 	return (str);
 }
 
-char	*ft_sub_str(char *str)
+static char	*ft_sub_str(char *str)
 {
 	char	*tmp;
 	int		i;
