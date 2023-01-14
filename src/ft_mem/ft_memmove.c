@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:04:52 by ciclo             #+#    #+#             */
-/*   Updated: 2022/12/01 17:01:00 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/01/14 18:54:42 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 /// @return The pointer to dest.
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	if (!dst && !src)
-		return (0);
+	if (!dst || !src)
+		return (NULL);
 	if (src < dst)
 		while (len--)
 			((unsigned char *)dst)[len] = ((unsigned char *)src)[len];
