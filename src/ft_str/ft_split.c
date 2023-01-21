@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:59:37 by ciclo             #+#    #+#             */
-/*   Updated: 2022/11/16 01:32:13 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/01/21 21:53:57 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,9 +91,8 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (0);
 	num_words = ft_count_words(s, c);
-	s2 = (char **)malloc(sizeof(char *) * (num_words + 1));
-	if (!s2)
-		return (0);
+	if (!(s2 = (char **)malloc(sizeof(char *) * (num_words + 1))))
+		return (NULL);
 	ft_split_words(s, c, s2, num_words);
 	return (s2);
 }
