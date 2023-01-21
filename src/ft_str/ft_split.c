@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:59:37 by ciclo             #+#    #+#             */
-/*   Updated: 2023/01/21 21:53:57 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/01/21 21:56:59 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,8 @@ static char	**ft_split_words(char const *s, char c, char **s2, int num_words)
 			i++;
 			word_len++;
 		}
-		s2[word] = (char *)malloc(sizeof(char) * (word_len + 1));
-		if (!s2)
-			return (0);
+		if (!(s2[word] = (char *)malloc(sizeof(char) * (word_len + 1))))
+			return (NULL);
 		ft_putword(s2[word], s, i, word_len);
 		word_len = 0;
 		word++;
@@ -89,7 +88,7 @@ char	**ft_split(char const *s, char c)
 	unsigned int	num_words;
 
 	if (!s)
-		return (0);
+		return (NULL);
 	num_words = ft_count_words(s, c);
 	if (!(s2 = (char **)malloc(sizeof(char *) * (num_words + 1))))
 		return (NULL);
