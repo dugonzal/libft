@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:04:52 by ciclo             #+#    #+#             */
-/*   Updated: 2023/01/14 18:54:42 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/01/25 10:40:43 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 /// @return The pointer to dest.
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	if (!dst || !src)
+	if (!dst && !src)
 		return (NULL);
 	if (src < dst)
 		while (len--)
