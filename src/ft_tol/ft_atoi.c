@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:49:48 by ciclo             #+#    #+#             */
-/*   Updated: 2023/02/17 12:54:29 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/02/21 06:39:20 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 /// @return The converted int.
 int	ft_atoi(const char *str)
 {
-	int	nbr;
-	int	neg;
+	long int	nbr;
+	int			neg;
 
 	nbr = 0;
 	neg = 1;
@@ -29,9 +29,12 @@ int	ft_atoi(const char *str)
 		neg = -1;
 	if (*str == '+' || *str == '-')
 		str++;
-	while (*str > 47 && *str < 58)
+	while (*str >= '0' && *str <= '9' && *str)
 		nbr = nbr * 10 + *str++ - 48;
-	if (nbr > INT_MAX || nbr < INT_MIN)
-		err("es demasiado grande o demasiado pequeño");
-	return (nbr * neg);
+	if (nbr < -2147483648 || nbr > +2147483647)
+	{
+		printf (RED"Error\n"RESET);
+		exit (1);
+	}
+	return ((int)nbr * neg);
 }
