@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "include/get_next_line.h"
 
 int	find(char *str, int c)
 {
@@ -26,7 +26,7 @@ int	find(char *str, int c)
 	return (0);
 }
 
-int	ft_strlen(char *str)
+int	ft_strlen2(char *str)
 {
 	int	i;
 
@@ -38,7 +38,7 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin2(char *s1, char *s2)
 {
 	char	*tmp;
 	int		i;
@@ -46,7 +46,7 @@ char	*ft_strjoin(char *s1, char *s2)
 
 	if (!s1 && !s2)
 		return (NULL);
-	tmp = (char *)malloc(sizeof (char) * (ft_strlen(s1) + ft_strlen(s2)) + 1);
+	tmp = (char *)malloc(sizeof (char) * (ft_strlen2(s1) + ft_strlen2(s2)) + 1);
 	if (!tmp)
 		return (NULL);
 	i = 0;

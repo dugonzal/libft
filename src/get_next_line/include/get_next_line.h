@@ -6,7 +6,7 @@
 /*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 14:59:17 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/03/23 15:08:45 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/03/23 15:16:18 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 # include <stdio.h>
 # include <stdlib.h>
 
-char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strjoin2(char *s1, char *s2);
 int		find(char *str, int c);
-int		ft_strlen(char *str);
+int		ft_strlen2(char *str);
 
 #endif

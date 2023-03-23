@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "include/get_next_line.h"
 
 char	*read_line(char *str, int fd)
 {
@@ -30,7 +30,7 @@ char	*read_line(char *str, int fd)
 			return (NULL);
 		}
 		tmp[rd] = '\0';
-		str = ft_strjoin(str, tmp);
+		str = ft_strjoin2(str, tmp);
 		if (rd <= 0)
 			break ;
 	}
@@ -81,7 +81,7 @@ char	*next_line(char *str)
 		free (str);
 		return (NULL);
 	}
-	tmp = (char *)malloc(sizeof(char) * ft_strlen(str) - i + 2);
+	tmp = (char *)malloc(sizeof(char) * ft_strlen2(str) - i + 2);
 	if (!tmp)
 		return (NULL);
 	j = 0;
