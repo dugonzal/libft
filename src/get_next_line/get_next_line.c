@@ -1,100 +1,109 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/28 23:11:17 by dugonzal          #+#    #+#             */
-/*   Updated: 2022/12/25 12:52:32 by ciclo            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include "get_next_line.h"
 
-#include "include/get_next_line.h"
-
-char	*ft_free(char *buffer)
+char *read_line(char *str, int fd)
 {
-	free (buffer);
-	return (NULL);
+  ssize_t rd;
+  char *tmp;
+
+  tmp = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
+  if (!tmp)
+    return (NULL);
+  tmp[0] = '\0';  
+  while (!find (tmp, '\n')) 
+  {
+    rd = read (fd, tmp, BUFFER_SIZE);
+    if (rd == -1)
+    {
+      free (tmp);
+      return (NULL);
+    }
+    tmp[rd] = '\0';
+    str = ft_strjoin(str, tmp);
+    if (rd <= 0)
+      break ;
+  }
+  free (tmp);
+  return (str);
 }
 
-static char	*ft_line(char *str)
+char *get_line (char *str)
 {
-	char	*tmp;
-	int		i;
+  char *tmp;
+  int i;
 
-	i = 0;
-	while (str[i] != 0 && str[i] != '\n')
-		i++;
-	tmp = (char *)malloc(sizeof (char) * (i + 2));
-	i = 0;
-	while (str[i] != 0 && str[i] != '\n')
-	{
-		tmp[i] = str[i];
-		i++;
-	}
-	if (str[i] == '\n')
-	{
-		tmp[i] = str[i];
-		i++;
-	}
-	tmp[i] = '\0';
-	return (tmp);
+  i = 0;
+  while (str[i] != 0 && str[i] != '\n')
+    i++;
+  if (!str[i])
+     return (NULL);
+  tmp = (char *)malloc(sizeof(char) * i + 2);
+  if (!tmp)
+    return (NULL);
+  i = 0;
+  tmp[i] = '\0';
+  while (str[i] != 0 && str[i] != '\n')
+  {
+    tmp[i] = str[i];
+    i++;
+  }
+  if (str[i] == '\n')
+  {
+    tmp[i] = '\n';
+    i++;
+  }
+  tmp[i] = '\0';
+  return (tmp);
 }
 
-static char	*ft_read(char *str, int fd)
+char *next_line(char *str)
 {
-	char	*buffer;
-	ssize_t	rd;
+  char *tmp;
+  int i;
+  int j;
 
-	buffer = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
-	if (!buffer)
-		return (NULL);
-	rd = BUFFER_SIZE;
-	while (rd != 0 && (!ft_find(str, '\n')))
-	{
-		rd = read(fd, buffer, BUFFER_SIZE);
-		if ((!rd && !str) || rd == -1)
-			return (ft_free(buffer));
-		buffer[rd] = '\0';
-		str = ft_join(str, buffer);
-	}
-	free(buffer);
-	return (str);
+  i = 0;
+  while (str[i] != 0 && str[i] != '\n')
+    i++;
+  if (!str[i])
+  {
+    free (str);
+    return (NULL);
+  }
+  tmp = (char *)malloc(sizeof(char) * ft_strlen(str) - i + 2);
+  if (!tmp)
+    return (NULL);
+  j = 0;
+  *tmp = '\0';
+  while (str[i] != 0)
+    tmp[j++] = str[++i];
+  tmp[j] = '\0';
+  return (tmp);
 }
 
-static char	*ft_sub_str(char *str)
+char *get_next_line(int fd)
 {
-	char	*tmp;
-	int		i;
-	int		j;
+  char *line;
+  static char *str;
 
-	i = 0;
-	while (str[i] != 0 && str[i] != '\n')
-		i++;
-	tmp = (char *)malloc(sizeof(char) * (ft_strlen(str) - i));
-	if (!tmp && *str > ++i)
-		return (NULL);
-	i++;
-	j = 0;
-	while (str[i] != 0)
-		tmp[j++] = str[i++];
-	tmp[j] = 0;
-	free (str);
-	return (tmp);
+  if (fd < 0 || BUFFER_SIZE < 1 || read(fd, NULL, 0) < 0) // la condicion del read 
+    return (NULL);
+  str = read_line (str, fd);
+  if (!str)
+    return (NULL);
+  line = get_line(str);
+  str = next_line (str);
+  return (line);
 }
 
-char	*get_next_line(int fd)
-{
-	static char	*str;
-	char		*line;
 
-	if (fd < 0 || fd > 1024 || BUFFER_SIZE < 1)
-		return (NULL);
-	str = ft_read(str, fd);
-	if (!str)
-		return (NULL);
-	line = ft_line(str);
-	str = ft_sub_str(str);
-	return (line);
+int main(void)
+{
+  char *line;
+
+ while (((line = get_next_line (0)))){
+  printf ("%s", line);
+  free (line);
+ }
+  printf ("[%s]", line);
 }
+

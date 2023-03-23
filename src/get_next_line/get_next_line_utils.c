@@ -1,73 +1,49 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/21 11:31:05 by ciclo-d           #+#    #+#             */
-/*   Updated: 2022/12/12 20:01:44 by ciclo            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include "get_next_line.h"
 
-#include "include/get_next_line.h"
-
-int	ft_slen(char *string, char c)
+int find(char *str, int c)
 {
-	int	i;
-
-	i = 0;
-	if (!string)
-		return (0);
-	while (string[i])
-	{
-		if (string[i] == c)
-			return (i);
-		i++;
-	}
-	return (i);
+  int i = 0;
+  while (str[i]){
+    if (str[i] == (char)c)
+      return (1);
+    i++;
+  }
+  return (0);
 }
 
-char	*ft_join(char *full, char *buffer)
+int ft_strlen(char *str)
 {
-	char	*s;
-	int		i;
-	int		j;
-
-	if (!full)
-	{
-		full = malloc(1);
-		*full = '\0';
-	}
-	s = (char *)malloc(ft_slen(full, 0) + ft_slen(buffer, 0) + 1);
-	if (!s)
-		return (NULL);
-	i = 0;
-	j = 0;
-	while (full[i])
-	{
-		s[i] = full[i];
-		i++;
-	}
-	while (buffer[j] != 0)
-		s[i++] = buffer[j++];
-	free (full);
-	s[i] = '\0';
-	return (s);
+  int i = 0;
+  if (!str)
+    return (0);
+  while (str[i])
+    i++;
+  return (i);
 }
 
-char	*ft_find(char *full, char c)
+char *ft_strjoin (char *s1, char *s2)
 {
-	int	i;
+  char *tmp;
+  int i;
+  int j;
 
-	if (!full)
-		return (NULL);
-	i = 0;
-	while (full[i])
-	{
-		if (full[i] == c)
-			return (full + i);
-		i++;
-	}
-	return (NULL);
+  if (!s1 && !s2)
+    return (NULL);
+  tmp = (char *)malloc(sizeof (char) * (ft_strlen(s1) + ft_strlen(s2)) + 1);
+  if (!tmp)
+    return (NULL);
+  i = 0;
+  tmp[i] = '\0';
+  if (s1)  
+    while (s1[i])
+    {
+      tmp[i] = s1[i];
+      i++;
+    }
+  j = 0;
+  while (s2[j] != 0)
+    tmp[i++] = s2[j++];
+  tmp[i] = '\0';
+  free (s1);
+  return (tmp);
 }
