@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+         #
+#    By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/08 17:00:13 by ciclo             #+#    #+#              #
-#    Updated: 2023/04/05 10:46:39 by dugonzal         ###   ########.fr        #
+#    Updated: 2023/04/06 20:20:21 by ciclo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,6 @@ CC			:= gcc
 CFLAGS		:= -Wall -Werror -Wextra -I
 RM			:= rm -f
 AR			:= ar rcs
-# rules of memory leaks
 val :=  valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes
 
 SANI := -fsanitize=address -g3
@@ -29,8 +28,6 @@ SRC_FILES	:=	 ft_print_int  ft_printf ft_printf_utils ft_printf_hex ft_printf_p
 SRC	:= 	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJ	:= 	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
 #.SILENT:
-OBJF := .cache_exists
-#Rules of compilation and linking of the library and the executable file
 ifndef verbose
 .SILENT:
 endif
@@ -39,13 +36,11 @@ $(NAME):$(OBJ)
 	$(AR) $(NAME) $(OBJ)
 	echo "ft_printf compilando!"
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJF)
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c
+	mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
-$(OBJF):
-	mkdir -p $(OBJ_DIR)
-
-all:		$(NAME)
+all: $(NAME)
 
 clean:
 	$(RM) -rf $(OBJ_DIR)
@@ -59,7 +54,7 @@ fclean:		clean
 cache:
 	mkdir -p $(OBJ_DIR)
 
-re:		fclean all
+re:	fclean all
 	echo "Cleaned and rebuilt everything for ft_printf!"
 
 sanitize:
@@ -67,7 +62,6 @@ sanitize:
 	echo "Sanitize compilando!"
 
 valgrind:
-
 	$(val)	./libftprintf.a
 	echo "\n valgind in use xd\n"
 

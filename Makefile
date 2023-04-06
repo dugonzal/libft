@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+         #
+#    By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/12 01:54:25 by ciclo             #+#    #+#              #
-#    Updated: 2023/04/05 11:56:43 by dugonzal         ###   ########.fr        #
+#    Updated: 2023/04/06 20:21:52 by ciclo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME		=	libft.a
 INCLUDES	=	./include
 SRCS_DIR 	=	src/
 OBJS_DIR	=	obj/
-CC			=	gcc
+CC			=	clang
 CFLAGS		=	-Wall -Werror -Wextra -I
 RM			=	rm -rf
 AR			=	ar rcs
@@ -78,30 +78,29 @@ ifndef VERBOSE
 endif
 
 # Rules for the main program and the objects files
-$(NAME):	$(OBJS)
-			make -C ft_printf
-			mv ft_printf/printf.a $(NAME)
-			$(AR) $(NAME) $(OBJS)
-			echo "$(GREEN)Libft compiled!$(DEF_COLOR)"
+$(NAME):	$(OBJS) $(OBJS_DIR)
+	make -C ft_printf
+	mv ft_printf/printf.a $(NAME)
+	$(AR) $(NAME) $(OBJS)
+	echo "$(GREEN)Libft compiled!$(DEF_COLOR)"
 
-$(OBJS_DIR)%.o : $(SRCS_DIR)%.c | $(OBJSF)# | $(INCLUDES) directory if you want to use header files
-			$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
-
-$(OBJSF):#  create the directory for the objects if it doesn't exist mkdir -p para que no de error si ya existe
+$(OBJS_DIR)%.o : $(SRCS_DIR)%.c
+# | $(INCLUDES) directory if you want to use header files
 	mkdir	-p $(OBJS_DIR)
 	mkdir	-p  $(OBJS_DIR)$(FTIS_DIR)
 	mkdir	-p $(OBJS_DIR)$(FTMEM_DIR)
 	mkdir	-p $(OBJS_DIR)$(FTPUT_DIR)
 	mkdir	-p $(OBJS_DIR)$(FTTO_DIR)
 	mkdir	-p $(OBJS_DIR)$(FTSTR_DIR)
-	mkdir  -p $(OBJS_DIR)$(FTLST_DIR)
+	mkdir  	-p $(OBJS_DIR)$(FTLST_DIR)
 	mkdir	-p $(OBJS_DIR)$(gnl_dir)
 	mkdir	-p $(OBJS_DIR)$(err_dir)
 	mkdir	-p $(OBJS_DIR)$(math_dir)
 	mkdir	-p $(OBJS_DIR)$(num_dir)
 	mkdir	-p $(OBJS_DIR)$(octet_dir)
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
-all:		$(NAME)
+all: $(NAME) $(OBJS)
 
 clean:
 	$(RM)	$(OBJS_DIR)
@@ -109,12 +108,12 @@ clean:
 	$(RM)	$(OBJSF)
 	echo "Libft objects deleted!"
 
-fclean:		clean
+fclean:	clean
 	make fclean -C ft_printf
 	$(RM)	$(NAME)
 	echo "libft cleaned!"
 
-re:		fclean all
+re:	fclean all
 	echo "libft recompiled!"
 
-.PHONY:		all clean fclean re
+.PHONY:	all clean fclean re
