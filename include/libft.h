@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 17:59:05 by ciclo             #+#    #+#             */
-/*   Updated: 2023/04/10 09:06:51 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/04/10 21:27:53 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char			**ft_split(char const *s, char c);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strdup(const char *s1);
 void			ft_striteri(char *s, void (*f)(unsigned int, char *));
-char			*ft_strjoin(char const *s1, char const *s2);
+char			*ft_strjoin(const char *s1, char const *s2, int f);
 size_t			ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));

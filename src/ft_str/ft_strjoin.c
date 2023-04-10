@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:23:06 by ciclo             #+#    #+#             */
-/*   Updated: 2023/04/09 18:41:55 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/04/10 21:27:47 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,26 +17,28 @@
 /// @param s1 The prefix string.
 /// @param s2 The suffix string.
 /// @return The new string. NULL if the allocation fails.
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(const char *s1, char const *s2, int f)
 {
-	char			*s3;
+	char			*tmp;
 	unsigned int	i;
 	unsigned int	j;
 
 	if (!s1 || !s2)
 		return (NULL);
-	s3 = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (!s3)
-		return (0);
+	tmp = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!tmp)
+		return (NULL);
 	i = 0;
-	while (s1[i] != 0)
+	while (s1 && s1[i] != 0)
 	{
-		s3[i] = s1[i];
+		tmp[i] = s1[i];
 		i++;
 	}
 	j = 0;
-	while (s2[i] != 0)
-		s3[i++] = s2[j++];
-	s3[i] = 0;
-	return (s3);
+	while (s2 && s2[j] != 0)
+		tmp[i++] = s2[j++];
+	tmp[i] = '\0';
+	if (f)
+		free((char *)s1);
+	return (tmp);
 }
