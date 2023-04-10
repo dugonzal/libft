@@ -6,7 +6,7 @@
 #    By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/12 01:54:25 by ciclo             #+#    #+#              #
-#    Updated: 2023/04/06 20:21:52 by ciclo            ###   ########.fr        #
+#    Updated: 2023/04/10 09:07:19 by ciclo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ FTSTR_DIR	=	ft_str/
 FTSTR		=	ft_strlen ft_strchr ft_strdup ft_striteri ft_strjoin ft_strlcat ft_strlen ft_strlcpy \
 				ft_strncmp ft_strnstr ft_strrchr ft_strtrim ft_substr ft_split arr_size ft_strpbrk
 FTPUT_DIR	=	ft_put/
-FTPUT		=	ft_putchar_fd ft_putendl_fd ft_putnbr_fd
+FTPUT		=	ft_putchar_fd ft_putendl_fd ft_putnbr_fd ft_putstr_fd
 
 FTTO_DIR	=	ft_tol/
 FTTO		=	ft_atoi ft_itoa ft_tolower ft_toupper
