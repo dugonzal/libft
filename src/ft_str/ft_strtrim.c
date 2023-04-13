@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:45:21 by ciclo             #+#    #+#             */
-/*   Updated: 2023/04/13 16:17:18 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/04/13 16:18:05 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,8 @@ int	setcheck(char c, char const *set)
 
 	i = 0;
 	while (set[i])
-	{
 		if (set[i++] == c)
 			return (1);
-	}
 	return (0);
 }
 
