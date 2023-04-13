@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:45:21 by ciclo             #+#    #+#             */
-/*   Updated: 2023/04/13 16:14:19 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/04/13 16:17:18 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 /// @param s1 The string to be trimmed.
 /// @param set The reference set of characters to trim.
 /// @return The trimmed string. NULL if the allocation fails.
-int	ft_setcheck(char c, char const *set)
+int	setcheck(char c, char const *set)
 {
 	int	i;
 
@@ -42,10 +42,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = 0;
 	if (!s1 || !set)
 		return (NULL);
-	while (s1[start] && ft_setcheck(s1[start], set))
+	while (s1[start] && setcheck(s1[start], set))
 		start++;
 	end = ft_strlen(s1);
-	while (end > start && ft_setcheck(s1[end], set))
+	while (end > start && setcheck(s1[end], set))
 		end--;
 	str = (char *)malloc(sizeof(char) * (end - start + 1));
 	if (!str)
