@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 17:59:05 by ciclo             #+#    #+#             */
-/*   Updated: 2023/04/10 21:27:53 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/04/13 15:51:56 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ t_list			*ft_lstmap(t_list *lst, void \
 *(*f)(void *), void (*del)(void *));
 size_t			arr_size(char **str);
 // ft_str
-
+size_t			arr_size(char **str);
 int				ft_count_words(char const *str, char c);
 size_t			ft_strlen(const char *s);
 char			**ft_split(char const *s, char c);

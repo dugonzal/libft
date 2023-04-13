@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:45:21 by ciclo             #+#    #+#             */
-/*   Updated: 2022/09/12 02:03:45 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/04/13 16:14:19 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,18 +40,18 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	i = 0;
 	start = 0;
-	if (s1 == 0 || set == 0)
-		return (0);
-	end = (int)ft_strlen(s1);
-	while (s1[start++] && ft_setcheck(s1[start], set))
-		;
-	while (end-- > start && ft_setcheck(s1[end], set))
-		;
+	if (!s1 || !set)
+		return (NULL);
+	while (s1[start] && ft_setcheck(s1[start], set))
+		start++;
+	end = ft_strlen(s1);
+	while (end > start && ft_setcheck(s1[end], set))
+		end--;
 	str = (char *)malloc(sizeof(char) * (end - start + 1));
 	if (!str)
-		return (0);
+		return (NULL);
 	while (start < end)
 		str[i++] = s1[start++];
-	str[i] = '\0';
+	str[i] = 0;
 	return (str);
 }
