@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:45:21 by ciclo             #+#    #+#             */
-/*   Updated: 2023/04/13 16:18:05 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/04/18 15:21:46 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,11 @@ int	setcheck(char c, char const *set)
 
 	i = 0;
 	while (set[i])
-		if (set[i++] == c)
+	{
+		if (set[i] == c)
 			return (1);
+		i++;
+	}
 	return (0);
 }
 
@@ -40,10 +43,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = 0;
 	if (!s1 || !set)
 		return (NULL);
+	end = strlen(s1);
+	if (!end)
+		return (NULL);
 	while (s1[start] && setcheck(s1[start], set))
 		start++;
-	end = ft_strlen(s1);
-	while (end > start && setcheck(s1[end], set))
+	while (end > start && setcheck(s1[end - 1], set))
 		end--;
 	str = (char *)malloc(sizeof(char) * (end - start + 1));
 	if (!str)
@@ -53,3 +58,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str[i] = 0;
 	return (str);
 }
+
