@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:45:21 by ciclo             #+#    #+#             */
-/*   Updated: 2023/04/18 15:21:46 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/04/19 11:16:30 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	setcheck(char c, char const *set)
 	return (0);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set, int free_s1)
 {
 	char	*str;
 	int		start;
@@ -56,6 +56,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (start < end)
 		str[i++] = s1[start++];
 	str[i] = 0;
+	if (free_s1)
+		free((char *)s1);
 	return (str);
 }
 
