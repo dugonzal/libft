@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:59:37 by ciclo             #+#    #+#             */
-/*   Updated: 2023/04/22 12:11:26 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/04/22 12:28:36 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 /// @param s The string to be split.
 /// @param c The delimiter character.
 /// @return The array of new strings resulting from the split. NULL if the
-
 unsigned int count_words(const char *str, char c)
 {
   char *tmp;
@@ -49,11 +48,9 @@ unsigned int count_row(const char *str, char c)
   if (!str || !c)
 	  return (0);
   tmp = (char *)str;
-  while (*tmp && *tmp != c)
-  {
+  row = 0;
+  while (tmp[row] && tmp[row] != c)
 	row++;
-	tmp++;
-  }
   return  (row);
 }
 
@@ -64,6 +61,7 @@ char	**ft_split(const char *str, char c)
 	int				word;
 	int				row;
 	int				i;
+
 	if (!str || !c)
 		return (NULL);
 	num_words = count_words(str, c);
