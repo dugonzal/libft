@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 17:59:05 by ciclo             #+#    #+#             */
-/*   Updated: 2023/04/27 14:12:04 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/04/27 14:17:28 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ char			*ft_strnstr(const char *haystack, \
 const char		*needle, size_t len);
 size_t			ft_strcspn(const char *s, const char *reject);
 char			*ft_strpbrk(const char *s1, const char *s2);
-char			*ft_strndup(const char *s1, size_t n);
+char			*ft_strndup(const char *str, size_t n);
 // ft_mem
 
 void			ft_bzero(void *s, size_t n);
