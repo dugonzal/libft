@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:14:59 by ciclo             #+#    #+#             */
-/*   Updated: 2022/09/12 01:16:58 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/05/02 21:16:34 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strchr(const char *s, int c)
 	while (*s != (char)c)
 		if (*s++ == (char)c)
 			return ((char *)(s - 1));
-	if ((char)c == '\0')
+	if ((char)c == 0)
 		return ((char *)s);
 	return (0);
 }

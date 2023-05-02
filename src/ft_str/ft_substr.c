@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:45:53 by ciclo             #+#    #+#             */
-/*   Updated: 2022/09/12 01:49:05 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/05/02 20:41:15 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,24 @@
 /// @param start The start index of the substring in the string ’s’.
 /// @param len The maximum length of the substring.
 /// @return The substring. NULL if the allocation fails.
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *str, unsigned int start, size_t n)
 {
-	char	*s2;
-	size_t	s_len;
+	char	*tmp;
+	size_t	len;
 	size_t	end;
+	int		size;
 
-	if (!s)
+	len = ft_strlen(str);
+	if (!str)
 		return (0);
-	s_len = ft_strlen(s);
 	end = 0;
-	if (start < s_len)
-		end = s_len - start;
-	if (end > len)
+	tmp = NULL;
+  if (start < n)
+		end = len - start;
+	else if (end > len)
 		end = len;
-	s2 = (char *)malloc(sizeof(char) * (end + 1));
-	if (!s2)
-		return (0);
-	ft_memmove(s2, s + start, end + 1);
-	return (s2);
+  size = ft_strlen(str) + start - end;
+  printf ("size = %d\n", size);
+	ft_strndup(tmp, size);
+	return (tmp);
 }

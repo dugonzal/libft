@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 00:50:47 by ciclo             #+#    #+#             */
-/*   Updated: 2022/09/12 00:56:54 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/05/02 21:00:27 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,9 @@
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (f)
-	{
 		while (lst)
 		{
 			f(lst->content);
 			lst = lst->next;
 		}
-	}
 }

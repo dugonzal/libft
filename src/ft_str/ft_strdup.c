@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:17:16 by ciclo             #+#    #+#             */
-/*   Updated: 2022/09/12 01:19:06 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/05/02 20:54:50 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ char	*ft_strdup(const char *s1)
 	s2 = (char *)malloc(len);
 	if (!s2)
 		return (0);
-	ft_memmove(s2, s1, len);
+  ft_strlcpy(s2, s1, len);
 	return (s2);
 }
