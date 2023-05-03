@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:17:16 by ciclo             #+#    #+#             */
-/*   Updated: 2023/05/03 11:16:18 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/05/03 13:06:58 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,5 @@ char	*ft_strdup(const char *str)
 	if (!tmp)
 		return (0);
 	ft_strlcpy(tmp, (char *)str, len);
-	tmp[len - 1] = 0;
 	return (tmp);
 }
