@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:50:56 by ciclo             #+#    #+#             */
-/*   Updated: 2023/05/03 13:35:12 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/05/03 13:36:16 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,9 @@ char	*ft_itoa(int nbr)
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
-	str[len] = 0;
 	if (!nbr)
 		return (ft_strdup("0"));
+	str[len] = 0;
 	while (len--)
 	{
 		str[len] = ((nbr % 10) * sign) + 48;
