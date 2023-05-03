@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:45:53 by ciclo             #+#    #+#             */
-/*   Updated: 2023/05/02 20:41:15 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/05/03 11:40:07 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,24 +20,23 @@
 /// @param start The start index of the substring in the string ’s’.
 /// @param len The maximum length of the substring.
 /// @return The substring. NULL if the allocation fails.
-char	*ft_substr(char const *str, unsigned int start, size_t n)
+char	*ft_substr(char const *src, unsigned int start, size_t len)
 {
-	char	*tmp;
-	size_t	len;
-	size_t	end;
-	int		size;
+	size_t			i;
+	size_t			slen;
+	char			*tmp;
 
-	len = ft_strlen(str);
-	if (!str)
-		return (0);
-	end = 0;
-	tmp = NULL;
-  if (start < n)
-		end = len - start;
-	else if (end > len)
-		end = len;
-  size = ft_strlen(str) + start - end;
-  printf ("size = %d\n", size);
-	ft_strndup(tmp, size);
+	if (!src)
+		return (NULL);
+	slen = ft_strlen(src);
+	if (start > slen)
+		return (NULL);
+	tmp = malloc(sizeof(char) * (len + 1));
+	if (!tmp)
+		return (NULL);
+	i = -1;
+	while (++i < len)
+		tmp[i] = src[start + i];
+	tmp[i] = 0;
 	return (tmp);
 }

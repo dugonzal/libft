@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:45:21 by ciclo             #+#    #+#             */
-/*   Updated: 2023/04/19 11:16:30 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/05/03 11:18:24 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,10 @@ int	setcheck(char c, char const *set)
 {
 	int	i;
 
-	i = 0;
-	while (set[i])
-	{
+	i = -1;
+	while (set[++i])
 		if (set[i] == c)
 			return (1);
-		i++;
-	}
 	return (0);
 }
 

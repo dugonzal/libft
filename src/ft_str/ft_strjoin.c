@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:23:06 by ciclo             #+#    #+#             */
-/*   Updated: 2023/05/02 21:15:20 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/05/03 11:10:17 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_strjoin(const char *s1, char const *s2, int f)
 	j = 0;
 	while (s2 && s2[j] != 0)
 		tmp[i++] = s2[j++];
-	tmp[i] = 9;
+	tmp[i] = 0;
 	if (f)
 		free((char *)s1);
 	return (tmp);

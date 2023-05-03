@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:59:37 by ciclo             #+#    #+#             */
-/*   Updated: 2023/04/22 12:28:36 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/05/03 11:32:47by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,36 +57,27 @@ unsigned int count_row(const char *str, char c)
 char	**ft_split(const char *str, char c)
 {
 	char			**tmp;
-	unsigned int	num_words;
-	int				word;
+	int				words;
 	int				row;
 	int				i;
 
 	if (!str || !c)
 		return (NULL);
-	num_words = count_words(str, c);
-	if (!num_words)
-	  return (NULL);
-	tmp = (char **)malloc(sizeof(char *) * num_words + 1);
-	if (!tmp)
-	  return (NULL);
-	word = 0;
-	i = 0;
-	while (str[i] && str[i] == c)
-	  i++;
-	while (str[i])
-	{
-	  row = 0;
-	  tmp[word] = (char *)malloc(sizeof(char) * count_row(&str[i], c));
-	  if (!tmp[word])
+	words = count_words(str, c);
+	tmp = (char **)malloc(sizeof(char *) * words + 1);
+	if (!tmp || !words)
 		return (NULL);
-	  while (str[i] && str[i] != c)
-		tmp[word][row++] = str[i++];
-	  tmp[word][row] = 0;
-	  while (str[i] && str[i] == c)
-		i++;
-	  word++;
+	i = -1;
+	while (i < words)
+	{
+		while (str && *str == c)
+			str++;
+		row = count_row(str, c);
+		tmp[++i] = ft_substr(str, 0, row);
+		if (!tmp[i])
+			return (NULL);
+		str += row;
 	}
-	tmp[word] = NULL;
+	tmp[words] = NULL;
 	return (tmp);
 }

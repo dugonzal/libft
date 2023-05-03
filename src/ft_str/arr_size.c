@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arr_size.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 14:31:45 by ciclo             #+#    #+#             */
-/*   Updated: 2023/05/02 21:11:41 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/05/03 11:03:52 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ size_t	arr_size(char **str)
 {
 	size_t	i;
 
-	i = -1 
+	i = -1;
 	while (str[++i]);
 	return (i);
 }
