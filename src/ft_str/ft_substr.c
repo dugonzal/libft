@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:45:53 by ciclo             #+#    #+#             */
-/*   Updated: 2022/09/12 01:49:05 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/05/03 11:40:07 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,23 @@
 /// @param start The start index of the substring in the string ’s’.
 /// @param len The maximum length of the substring.
 /// @return The substring. NULL if the allocation fails.
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *src, unsigned int start, size_t len)
 {
-	char	*s2;
-	size_t	s_len;
-	size_t	end;
+	size_t			i;
+	size_t			slen;
+	char			*tmp;
 
-	if (!s)
-		return (0);
-	s_len = ft_strlen(s);
-	end = 0;
-	if (start < s_len)
-		end = s_len - start;
-	if (end > len)
-		end = len;
-	s2 = (char *)malloc(sizeof(char) * (end + 1));
-	if (!s2)
-		return (0);
-	ft_memmove(s2, s + start, end + 1);
-	return (s2);
+	if (!src)
+		return (NULL);
+	slen = ft_strlen(src);
+	if (start > slen)
+		return (NULL);
+	tmp = malloc(sizeof(char) * (len + 1));
+	if (!tmp)
+		return (NULL);
+	i = -1;
+	while (++i < len)
+		tmp[i] = src[start + i];
+	tmp[i] = 0;
+	return (tmp);
 }

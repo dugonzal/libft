@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 14:55:39 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/03/23 15:01:29 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/05/02 21:10:05 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ int	ft_strlen2(char *str)
 {
 	int	i;
 
-	i = 0;
+	i = -1;
 	if (!str)
 		return (0);
-	while (str[i])
-		i++;
+	while (str[++i])
+		;
 	return (i);
 }
 
@@ -50,19 +50,17 @@ char	*ft_strjoin2(char *s1, char *s2)
 	if (!tmp)
 		return (NULL);
 	i = 0;
-	tmp[i] = '\0';
+	tmp[i] = 0;
 	if (s1)
-	{
 		while (s1[i])
 		{
 			tmp[i] = s1[i];
 			i++;
 		}
-	}
 	j = 0;
 	while (s2[j] != 0)
 		tmp[i++] = s2[j++];
-	tmp[i] = '\0';
+	tmp[i] = 0;
 	free (s1);
 	return (tmp);
 }

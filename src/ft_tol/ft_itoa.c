@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:50:56 by ciclo             #+#    #+#             */
-/*   Updated: 2022/09/12 01:52:45 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/05/03 13:36:16 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,68 +16,48 @@
 /// integer received as an argument. Negative numbers must be handled.
 /// @param n The integer to be converted to a string.
 /// @return The string representing the integer. NULL if the allocation fails.
-static void	ft_isneg(int *n, int *neg, int *tmp)
+int len_nbr(int nbr)
 {
-	if (*n == -2147483648)
+	int i;
+
+	i = 0;
+	if (nbr < 0)
 	{
-		*n = *n + 1;
-		*neg = -1;
-		*tmp = 1;
-		*n = *n * -1;
+		i++;
+		nbr *= -1;
 	}
-	else if (*n < 0)
+	while (nbr > 0)
 	{
-		*neg = -1;
-		*n = *n * -1;
-		*tmp = 0;
+		i++;
+		nbr /= 10;
 	}
-	else if (*n >= 0)
-	{
-		*neg = 1;
-		*tmp = 0;
-	}
+	return (i);
 }
 
-static int	ft_itoa_len(int n)
-{
-	int	len;
 
-	len = 0;
-	while (n > 9)
-	{
-		n = n / 10;
-		len++;
-	}
-	len++;
-	return (len);
-}
-
-static void	ft_itoa_write(char *str, int len, int n, int tmp)
-{
-	while (n > 9)
-	{
-		str[len--] = (n % 10) + '0' + tmp;
-		n = n / 10;
-		tmp = 0;
-	}
-	str[len] = n + '0';
-}
-
-char	*ft_itoa(int n)
+char	*ft_itoa(int nbr)
 {
 	char	*str;
 	int		len;
-	int		neg;
-	int		tmp;
+	int		sign;
 
-	ft_isneg(&n, &neg, &tmp);
-	len = ft_itoa_len(n);
-	str = (char *)malloc(sizeof(char) * (len + 1 + neg));
+	if (nbr < 0)
+		sign = -1;
+	else
+		sign = 1;
+	len = len_nbr(nbr);
+	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
-	if (neg == -1)
+	if (!nbr)
+		return (ft_strdup("0"));
+	str[len] = 0;
+	while (len--)
+	{
+		str[len] = ((nbr % 10) * sign) + 48;
+		nbr /= 10;
+	}
+	if (sign == -1)
 		str[0] = '-';
-	str[len + neg] = '\0';
-	ft_itoa_write(str, len + neg - 1, n, tmp);
 	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 21:36:46 by ciclo             #+#    #+#             */
-/*   Updated: 2023/04/08 19:19:07 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/05/03 13:10:32 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,11 @@
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
-	size_t	len;
 
-	i = 0;
-	len = ft_strlen(src);
+	i = -1;
 	if (dstsize)
-		while ((i < dstsize - 1) && src[i] != 0)
-		{
+		while ((++i < dstsize - 1) && src[i] != 0)
 			dst[i] = src[i];
-			i++;
-		}
 	dst[i] = 0;
-	return (len);
+	return (ft_strlen(src));
 }

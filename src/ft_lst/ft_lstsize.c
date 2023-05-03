@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 00:58:21 by ciclo             #+#    #+#             */
-/*   Updated: 2022/09/12 00:58:33 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/05/02 21:03:06 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,8 @@ int	ft_lstsize(t_list *lst)
 {
 	int	size;
 
-	size = 0;
-	while (lst)
-	{
+	size = -1;
+	while (++lst)
 		lst = lst->next;
-		size++;
-	}
 	return (size);
 }

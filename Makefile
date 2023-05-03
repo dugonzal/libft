@@ -6,7 +6,7 @@
 #    By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/12 01:54:25 by ciclo             #+#    #+#              #
-#    Updated: 2023/04/27 14:11:23 by Dugonzal         ###   ########.fr        #
+#    Updated: 2023/05/02 21:06:47 by Dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,6 @@ SRC_FILES	+=	$(addprefix $(octet_dir),$(octet))
 SRCS 		= 	$(addprefix $(SRCS_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJS 		= 	$(addprefix $(OBJS_DIR), $(addsuffix .o, $(SRC_FILES)))
 
-OBJSF		=	.cache_exists
 
 ifndef VERBOSE
 .SILENT:
@@ -79,8 +78,7 @@ endif
 
 # Rules for the main program and the objects files
 $(NAME):	$(OBJS) $(OBJS_DIR)
-	make -C ft_printf
-	mv ft_printf/printf.a $(NAME)
+	make -C ft_printf; mv ft_printf/printf.a $(NAME)
 	$(AR) $(NAME) $(OBJS)
 	echo "$(GREEN)Libft compiled!$(DEF_COLOR)"
 

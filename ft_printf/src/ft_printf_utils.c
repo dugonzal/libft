@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 13:52:16 by ciclo             #+#    #+#             */
-/*   Updated: 2022/11/13 17:05:40 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/05/02 21:21:45 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,7 @@ size_t	ft_formats(va_list arg, char c)
 
 size_t	ft_putchar(char c)
 {
-	write(1, &c, 1);
-	return (1);
+	return (write(1, &c, 1));
 }
 
 size_t	ft_putstr(char *str)
@@ -47,10 +46,7 @@ size_t	ft_putstr(char *str)
 	size_t	i;
 
 	if (str == NULL)
-	{
-		ft_putstr("(null)");
-		return (6);
-	}
+		return (ft_putstr(str));
 	i = 0;
 	while (str[i])
 		ft_putchar(str[i++]);

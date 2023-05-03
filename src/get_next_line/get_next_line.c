@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 14:51:50 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/03/23 14:55:33 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/05/02 20:47:57 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ char	*get_line(char *str)
 		tmp[i] = '\n';
 		i++;
 	}
-	tmp[i] = '\0';
+	tmp[i] = 0;
 	return (tmp);
 }
 
@@ -85,10 +85,10 @@ char	*next_line(char *str)
 	if (!tmp)
 		return (NULL);
 	j = 0;
-	*tmp = '\0';
+	*tmp = 0;
 	while (str[i] != 0)
 	tmp[j++] = str[++i];
-	tmp[j] = '\0';
+	tmp[j] = 0;
 	return (tmp);
 }
 
