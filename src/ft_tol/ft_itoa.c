@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:50:56 by ciclo             #+#    #+#             */
-/*   Updated: 2023/05/03 13:36:16 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/05/03 13:55:16 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 /// integer received as an argument. Negative numbers must be handled.
 /// @param n The integer to be converted to a string.
 /// @return The string representing the integer. NULL if the allocation fails.
-int len_nbr(int nbr)
+int	len_nbr(int nbr)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (nbr < 0)
@@ -33,7 +33,6 @@ int len_nbr(int nbr)
 	}
 	return (i);
 }
-
 
 char	*ft_itoa(int nbr)
 {

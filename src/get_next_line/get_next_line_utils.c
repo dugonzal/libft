@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 14:55:39 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/05/02 21:10:05 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/05/03 13:55:00 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,11 @@ char	*ft_strjoin2(char *s1, char *s2)
 	tmp = (char *)malloc(sizeof (char) * (ft_strlen2(s1) + ft_strlen2(s2)) + 1);
 	if (!tmp)
 		return (NULL);
-	i = 0;
+	i = -1;
 	tmp[i] = 0;
 	if (s1)
-		while (s1[i])
-		{
+		while (s1[++i])
 			tmp[i] = s1[i];
-			i++;
-		}
 	j = 0;
 	while (s2[j] != 0)
 		tmp[i++] = s2[j++];

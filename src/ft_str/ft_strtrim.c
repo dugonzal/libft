@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:45:21 by ciclo             #+#    #+#             */
-/*   Updated: 2023/05/03 11:18:24 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/05/03 13:52:18 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,3 @@ char	*ft_strtrim(char const *s1, char const *set, int free_s1)
 		free((char *)s1);
 	return (str);
 }
-

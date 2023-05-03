@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:59:37 by ciclo             #+#    #+#             */
-/*   Updated: 2023/05/03 11:32:47by ciclo            ###   ########.fr       */
+/*   Updated: 2023/05/03 13:56:52 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,40 +18,40 @@
 /// @param s The string to be split.
 /// @param c The delimiter character.
 /// @return The array of new strings resulting from the split. NULL if the
-unsigned int count_words(const char *str, char c)
+unsigned int	count_words(const char *str, char c)
 {
-  char *tmp;
-  int words;
+	char	*tmp;
+	int		words;
 
-  if (!str || !c)
+	if (!str || !c)
 		return (0);
-  words = 0;
-  tmp = (char *)str;
-  while (*tmp && *tmp == c)
-	tmp++;
-  while (*tmp)
-  {
-	while (*tmp && *tmp != c)
-	  tmp++;
-	words++;
+	words = 0;
+	tmp = (char *)str;
 	while (*tmp && *tmp == c)
-	  tmp++;
-  }
-  return (words);
+		tmp++;
+	while (*tmp)
+	{
+		while (*tmp && *tmp != c)
+			tmp++;
+		words++;
+		while (*tmp && *tmp == c)
+			tmp++;
+	}
+	return (words);
 }
 
-unsigned int count_row(const char *str, char c)
+unsigned int	count_row(const char *str, char c)
 {
-  char *tmp;
-  int	row;
+	char	*tmp;
+	int		row;
 
-  if (!str || !c)
-	  return (0);
-  tmp = (char *)str;
-  row = 0;
-  while (tmp[row] && tmp[row] != c)
-	row++;
-  return  (row);
+	if (!str || !c)
+		return (0);
+	tmp = (char *)str;
+	row = 0;
+	while (tmp[row] && tmp[row] != c)
+		row++;
+	return (row);
 }
 
 char	**ft_split(const char *str, char c)

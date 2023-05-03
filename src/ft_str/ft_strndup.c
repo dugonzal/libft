@@ -6,7 +6,7 @@
 /*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 14:06:57 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/05/03 13:06:41 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/05/03 13:52:40 by ciclo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	*ft_strndup(const char *str, size_t n)
 {
-	char *tmp;
+	char	*tmp;
 
 	if (!n)
-	  return ((char *)str);
+		return ((char *)str);
 	else if (!str)
 		return (NULL);
 	tmp = malloc(sizeof(char) * (n + 1));
