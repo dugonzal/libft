@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 00:59:22 by ciclo             #+#    #+#             */
-/*   Updated: 2022/12/01 17:01:48 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/05/04 17:49:58 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,5 @@
 /// @return A pointer to the allocated memory.
 void	*ft_calloc(size_t count, size_t size)
 {
-	ft_memset(malloc(count * size), 0, count * size);
-	return (NULL);
+	return(ft_memset(malloc(count * size), 0, count * size));
 }
