@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 13:52:16 by ciclo             #+#    #+#             */
-/*   Updated: 2023/05/02 21:21:45 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/05/09 16:02:25 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,21 +36,26 @@ size_t	ft_formats(va_list arg, char c)
 	return (x);
 }
 
+int ft_strlen3(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i])
+	  i++;
+	return (i);
+}
+
 size_t	ft_putchar(char c)
 {
-	return (write(1, &c, 1));
+	return(write(1, &c, 1));
 }
 
 size_t	ft_putstr(char *str)
 {
-	size_t	i;
-
 	if (str == NULL)
-		return (ft_putstr(str));
-	i = 0;
-	while (str[i])
-		ft_putchar(str[i++]);
-	return (i);
+		return(ft_putstr("(null)"));
+	return (write(1, str, ft_strlen3(str)));
 }
 
 size_t	ft_print_u(unsigned int n)
