@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 17:59:05 by ciclo             #+#    #+#             */
-/*   Updated: 2023/04/27 14:17:28 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/05/12 10:06:44 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ size_t			arr_size(char **str);
 size_t			arr_size(char **str);
 int				ft_count_words(char const *str, char c);
 size_t			ft_strlen(const char *s);
-char			**ft_split(char const *s, char c);
+char			**ft_split(char const *s, char c, int free_flag);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strdup(const char *s1);
 void			ft_striteri(char *s, void (*f)(unsigned int, char *));

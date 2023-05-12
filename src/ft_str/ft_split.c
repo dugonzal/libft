@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:59:37 by ciclo             #+#    #+#             */
-/*   Updated: 2023/05/03 13:56:52 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/05/12 10:06:07 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ unsigned int	count_row(const char *str, char c)
 	return (row);
 }
 
-char	**ft_split(const char *str, char c)
+char	**ft_split(const char *str, char c, int free_flag)
 {
 	char			**tmp;
 	int				words;
@@ -78,6 +78,8 @@ char	**ft_split(const char *str, char c)
 			return (NULL);
 		str += row;
 	}
+	if (free_flag)
+		free((char *)str);
 	tmp[words] = NULL;
 	return (tmp);
 }
