@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 00:59:22 by ciclo             #+#    #+#             */
-/*   Updated: 2023/05/04 17:56:22 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/05/11 16:41:18 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ void	*ft_calloc(size_t count, size_t size)
 	tmp = (char *)malloc(count * size);
 	if (!tmp)
 		return (NULL);
-	return(memset(tmp, 0, count * size));
+	return(ft_memset(tmp, 0, count * size));
 }
