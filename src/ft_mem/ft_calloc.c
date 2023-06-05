@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 00:59:22 by ciclo             #+#    #+#             */
-/*   Updated: 2023/05/17 21:48:45 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/06/05 05:22:54 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@
 /// @return A pointer to the allocated memory.
 void	*ft_calloc(size_t count, size_t size)
 {
-	return(ft_memset(malloc(count * size), 0, count * size));
+	return (ft_memset(malloc(count * size), 0, count * size));
 }

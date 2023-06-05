@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:59:37 by ciclo             #+#    #+#             */
-/*   Updated: 2023/05/12 10:06:07 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/06/05 05:22:23 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,29 +57,27 @@ unsigned int	count_row(const char *str, char c)
 char	**ft_split(const char *str, char c, int free_flag)
 {
 	char			**tmp;
-	int				words;
 	int				row;
 	int				i;
 
 	if (!str || !c)
 		return (NULL);
-	words = count_words(str, c);
-	tmp = (char **)malloc(sizeof(char *) * words + 1);
-	if (!tmp || !words)
+	tmp = (char **)ft_calloc(sizeof(char *), (count_words(str, c) + 1));
+	if (!tmp)
 		return (NULL);
 	i = -1;
-	while (i < words)
+	while (*str)
 	{
 		while (str && *str == c)
 			str++;
 		row = count_row(str, c);
-		tmp[++i] = ft_substr(str, 0, row);
+		tmp[++i] = ft_strndup(str, row);
 		if (!tmp[i])
 			return (NULL);
 		str += row;
 	}
 	if (free_flag)
 		free((char *)str);
-	tmp[words] = NULL;
+	tmp[i] = NULL;
 	return (tmp);
 }
