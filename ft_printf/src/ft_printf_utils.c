@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 13:52:16 by ciclo             #+#    #+#             */
-/*   Updated: 2023/05/09 16:02:25 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/06/05 05:20:06 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,25 +36,25 @@ size_t	ft_formats(va_list arg, char c)
 	return (x);
 }
 
-int ft_strlen3(char *str)
+int	ft_strlen3(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
-	  i++;
+		i++;
 	return (i);
 }
 
 size_t	ft_putchar(char c)
 {
-	return(write(1, &c, 1));
+	return (write(1, &c, 1));
 }
 
 size_t	ft_putstr(char *str)
 {
-	if (str == NULL)
-		return(ft_putstr("(null)"));
+	if (!str[0])
+		return (ft_putstr("(null)"));
 	return (write(1, str, ft_strlen3(str)));
 }
 
