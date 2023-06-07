@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:59:37 by ciclo             #+#    #+#             */
-/*   Updated: 2023/05/31 20:26:57 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/05/12 10:06:07 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ unsigned int	count_row(const char *str, char c)
 	return (row);
 }
 
-char	**ft_split(const char *str, char c, int ft_free)
+char	**ft_split(const char *str, char c, int free_flag)
 {
 	char			**tmp;
 	int				words;
@@ -73,12 +73,12 @@ char	**ft_split(const char *str, char c, int ft_free)
 		while (str && *str == c)
 			str++;
 		row = count_row(str, c);
-		tmp[++i] = ft_strndup(str, row);
+		tmp[++i] = ft_substr(str, 0, row);
 		if (!tmp[i])
 			return (NULL);
 		str += row;
 	}
-	if (ft_free)
+	if (free_flag)
 		free((char *)str);
 	tmp[words] = NULL;
 	return (tmp);

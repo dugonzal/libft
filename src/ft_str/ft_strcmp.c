@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strndup.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/27 14:06:57 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/05/18 22:24:52 by dugonzal         ###   ########.fr       */
+/*   Created: 2023/06/07 11:22:26 by Dugonzal          #+#    #+#             */
+/*   Updated: 2023/06/07 11:24:00 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
-char	*ft_strndup(const char *str, size_t n)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	char	*tmp;
+	int	i;
 
-	if (!n)
-		return ((char *)str);
-	else if (!str)
-		return (NULL);
-	tmp = ft_calloc((n + 1), sizeof(char));
-	if (!tmp)
-		return (NULL);
-	ft_strlcpy(tmp, (char *)str, n + 1);
-	return (tmp);
+	i = 0;
+	while (s1[i] && s2[i] && s1[i] == s2[i])
+		i++;
+	return (s1[i] - s2[i]);
 }
