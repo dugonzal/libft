@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   err.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 18:10:26 by ciclo             #+#    #+#             */
-/*   Updated: 2023/05/01 19:47:18 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/06/25 23:25:00 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,3 +20,10 @@ void	err(char *str)
 	printf (RED"Error: %s\n"RESET, str);
 	exit (1);
 }
+
+int err_ret(char *str)
+{
+	printf (RED"Error: %s\n"RESET, str);
+	exit (1);
+}
+
