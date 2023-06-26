@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 17:59:05 by ciclo             #+#    #+#             */
-/*   Updated: 2023/05/12 10:06:44 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/06/25 23:25:28 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,7 @@ int				ft_toupper(int c);
 
 // errr
 void			err(char *str);
+int				err_ret(char *str);
 // math
 
 int				is_power_of_2(unsigned int n);
