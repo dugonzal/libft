@@ -6,11 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 13:52:16 by ciclo             #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2023/05/09 16:02:25 by Dugonzal         ###   ########.fr       */
-=======
-/*   Updated: 2023/06/05 05:20:06 by Dugonzal         ###   ########.fr       */
->>>>>>> main
+/*   Updated: 2023/06/26 15:44:47 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,15 +36,6 @@ size_t	ft_formats(va_list arg, char c)
 	return (x);
 }
 
-<<<<<<< HEAD
-int ft_strlen3(char *str)
-{
-	int i;
-
-	i = 0;
-	while (str[i])
-	  i++;
-=======
 int	ft_strlen3(char *str)
 {
 	int	i;
@@ -56,7 +43,6 @@ int	ft_strlen3(char *str)
 	i = 0;
 	while (str[i])
 		i++;
->>>>>>> main
 	return (i);
 }
 
@@ -67,13 +53,10 @@ size_t	ft_putchar(char c)
 
 size_t	ft_putstr(char *str)
 {
-<<<<<<< HEAD
 	if (str == NULL)
 		return(ft_putstr("(null)"));
-=======
 	if (!str[0])
 		return (ft_putstr("(null)"));
->>>>>>> main
 	return (write(1, str, ft_strlen3(str)));
 }
 
