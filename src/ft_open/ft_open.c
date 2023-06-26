@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 15:52:10 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/06/26 15:56:33 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/06/26 15:57:45 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int     ft_open(char *str, int i)
          fd = open (str, O_RDONLY | O_CREAT, 0644);
     if (fd == -1)
          ft_putendl_fd(RED"Error: No such file or directory"RESET, 2);
-        return (fd);
+    return (fd);
 }
 
 
