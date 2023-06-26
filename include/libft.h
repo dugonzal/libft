@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 17:59:05 by ciclo             #+#    #+#             */
-/*   Updated: 2023/06/26 15:42:31 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/06/26 15:55:12 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <stdio.h>
+# include <fcntl.h>
 # include "../ft_printf/include/ft_printf.h"
 # include "../src/get_next_line/include/get_next_line.h"
 # define GREEN	"\033[0;32m"
@@ -24,6 +25,7 @@
 # define GREY 	"\033[0;90m"
 # define CYAN	"\033[1;96m"
 # define RESET 	"\033[0m"
+# define BLUE "\033[0;34m"
 
 /// @brief
 typedef struct s_list
@@ -108,5 +110,6 @@ int				min(int *tab, int len);
 void			print_bits(unsigned char octet);
 unsigned char	swap_bits(unsigned char octet);
 unsigned char	reverse_bits(unsigned char octet);
-
+// ft_open
+int     		ft_open(char *str, int i);
 #endif
