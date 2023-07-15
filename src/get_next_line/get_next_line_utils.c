@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 14:55:39 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/06/26 20:27:35 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/07/15 10:50:17 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strjoin2(char *s1, char *s2)
 			tmp[i] = s1[i];
 	j = 0;
 	while (s2[j] != 0)
-		tmp[i++] = s2[j++];
+		tmp[++i] = s2[j++];
 	tmp[i] = 0;
 	free (s1);
 	return (tmp);

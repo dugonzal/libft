@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 14:51:50 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/06/26 20:26:48 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/07/15 10:49:17 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ char	*read_line(char *str, int fd)
 			return (NULL);
 		}
 		tmp[rd] = '\0';
+		printf ("tmp: %s\n", tmp);
 		str = ft_strjoin2(str, tmp);
 		if (rd <= 0)
 			break ;
