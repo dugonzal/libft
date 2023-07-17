@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:59:37 by ciclo             #+#    #+#             */
-/*   Updated: 2023/07/17 17:25:43 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/07/17 23:12:28 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ char	**ft_split(const char *str, char c, int free_flag)
 	{
 		while (str && *str == c)
 			str++;
+		if (!*str)
+		  break ;
 		row = count_row(str, c);
 		tmp[++i] = ft_strndup(str, row);
 		if (tmp[i] == NULL)
