@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:59:37 by ciclo             #+#    #+#             */
-/*   Updated: 2023/07/17 16:53:25 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/07/17 17:25:43 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ unsigned int	count_row(const char *str, char c)
 char	**ft_split(const char *str, char c, int free_flag)
 {
 	char			**tmp;
-	int				row;
+	unsigned int	row;
 	int				i;
 
 	if (str == NULL || c == '\0')
@@ -72,12 +72,12 @@ char	**ft_split(const char *str, char c, int free_flag)
 			str++;
 		row = count_row(str, c);
 		tmp[++i] = ft_strndup(str, row);
-		if (!tmp[i])
+		if (tmp[i] == NULL)
 			return (NULL);
 		str += row;
 	}
 	if (free_flag)
 		free((char *)str);
-	tmp[i] = NULL;
+	tmp[i + 1] = NULL;
 	return (tmp);
 }
