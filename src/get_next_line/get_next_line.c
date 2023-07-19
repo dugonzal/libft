@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 14:51:50 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/05/02 20:47:57 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/07/15 10:52:13 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*read_line(char *str, int fd)
 	if (!tmp)
 		return (NULL);
 	tmp[0] = '\0';
-	while (!find (tmp, '\n'))
+	while (!search (tmp, '\n'))
 	{
 		rd = read (fd, tmp, BUFFER_SIZE);
 		if (rd == -1)
@@ -81,7 +81,7 @@ char	*next_line(char *str)
 		free (str);
 		return (NULL);
 	}
-	tmp = (char *)malloc(sizeof(char) * ft_strlen2(str) - i + 2);
+	tmp = (char *)malloc(sizeof(char) * ft_strlen(str) - i + 2);
 	if (!tmp)
 		return (NULL);
 	j = 0;

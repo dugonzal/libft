@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:45:53 by ciclo             #+#    #+#             */
-/*   Updated: 2023/05/03 11:40:07 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/07/17 17:20:45 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_substr(char const *src, unsigned int start, size_t len)
 	size_t			slen;
 	char			*tmp;
 
-	if (!src)
+	if (src == NULL)
 		return (NULL);
 	slen = ft_strlen(src);
 	if (start > slen)

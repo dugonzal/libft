@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:06:07 by ciclo             #+#    #+#             */
-/*   Updated: 2023/06/04 09:26:45 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/07/17 22:57:24 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@
 void	*ft_memset(void *b, int c, size_t len)
 {
 	size_t	i;
-
+	
+	if (!b)
+		return (NULL);
 	i = -1;
 	while (++i < len)
 		((char *)b)[i] = (char)c;

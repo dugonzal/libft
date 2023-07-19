@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 17:59:05 by ciclo             #+#    #+#             */
-/*   Updated: 2023/06/26 15:55:12 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/06/26 20:24:46 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ size_t			ft_strcspn(const char *s, const char *reject);
 char			*ft_strpbrk(const char *s1, const char *s2);
 char			*ft_strndup(const char *str, size_t n);
 int				ft_strcmp(const char *s1, const char *s2);
+int				search(char *str, char c);
 // ft_mem
 
 void			ft_bzero(void *s, size_t n);

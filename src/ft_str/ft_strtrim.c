@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:45:21 by ciclo             #+#    #+#             */
-/*   Updated: 2023/05/03 13:52:18 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/07/17 17:07:27 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,6 @@
 /// @param s1 The string to be trimmed.
 /// @param set The reference set of characters to trim.
 /// @return The trimmed string. NULL if the allocation fails.
-int	setcheck(char c, char const *set)
-{
-	int	i;
-
-	i = -1;
-	while (set[++i])
-		if (set[i] == c)
-			return (1);
-	return (0);
-}
-
 char	*ft_strtrim(char const *s1, char const *set, int free_s1)
 {
 	char	*str;
@@ -38,14 +27,14 @@ char	*ft_strtrim(char const *s1, char const *set, int free_s1)
 
 	i = 0;
 	start = 0;
-	if (!s1 || !set)
+	if (s1 == NULL || set == NULL)
 		return (NULL);
 	end = strlen(s1);
 	if (!end)
 		return (NULL);
-	while (s1[start] && setcheck(s1[start], set))
+	while (s1[start] && search((char *)set, s1[start]))
 		start++;
-	while (end > start && setcheck(s1[end - 1], set))
+	while (end > start && search((char *)set, s1[end - 1]))
 		end--;
 	str = (char *)malloc(sizeof(char) * (end - start + 1));
 	if (!str)
