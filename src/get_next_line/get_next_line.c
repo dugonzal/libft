@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 14:51:50 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/07/15 10:52:13 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/07/20 12:36:28 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ char	*read_line(char *str, int fd)
 			return (NULL);
 		}
 		tmp[rd] = '\0';
-		str = ft_strjoin2(str, tmp);
+		if (!str)
+			str = ft_strjoin("", tmp, 0);
+		else 
+			str = ft_strjoin(str, tmp, 1);
 		if (rd <= 0)
 			break ;
 	}
@@ -74,7 +77,7 @@ char	*next_line(char *str)
 	int		j;
 
 	i = 0;
-	while (str[i] != 0 && str[i] != '\n')
+	while (str[i] && str[i] != '\n')
 		i++;
 	if (!str[i])
 	{
@@ -86,8 +89,8 @@ char	*next_line(char *str)
 		return (NULL);
 	j = 0;
 	*tmp = 0;
-	while (str[i] != 0)
-	tmp[j++] = str[++i];
+	while (str[i])
+		tmp[j++] = str[++i];
 	tmp[j] = 0;
 	return (tmp);
 }

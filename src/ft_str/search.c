@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 14:00:18 by Dugonzal          #+#    #+#             */
-/*   Updated: 2023/07/13 14:01:09 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/07/20 12:39:33 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int	search(char *str, char c)
 {
-  int	i;
+	int	i;
 
-  i = -1;
-  while (str[++i])
-	if (str[i] == c)
-		return (1);
-  return (0);
+	i = -1;
+	while (str[++i])
+		if (str[i] == c)
+			return (1);
+	return (0);
 }

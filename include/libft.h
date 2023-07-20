@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 17:59:05 by ciclo             #+#    #+#             */
-/*   Updated: 2023/06/26 20:24:46 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/07/20 12:34:09 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,8 @@ void			ft_putstr_fd(char *s, int fd);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			*ft_strtrim(char const *s1, char const *set, int free_s1);
-// ft_tol
 
+// ft_tol
 int				ft_atoi(const char *str);
 char			*ft_itoa(int n);
 int				ft_tolower(int c);
@@ -111,6 +111,6 @@ int				min(int *tab, int len);
 void			print_bits(unsigned char octet);
 unsigned char	swap_bits(unsigned char octet);
 unsigned char	reverse_bits(unsigned char octet);
-// ft_open
-int     		ft_open(char *str, int i);
+int				ft_open(char *str, int i);
+
 #endif

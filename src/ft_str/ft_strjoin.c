@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 01:23:06 by ciclo             #+#    #+#             */
-/*   Updated: 2023/07/17 22:59:48 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/07/20 12:41:37 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,15 @@ char	*ft_strjoin(const char *s1, char const *s2, int f)
 	unsigned int	i;
 	unsigned int	j;
 
-	if (!s1 || !s2)
+	if (!s2)
 		return (NULL);
 	tmp = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!tmp)
 		return (NULL);
 	i = -1;
-	while (s1 && s1[++i] != 0)
-		tmp[i] = s1[i];
+	if (s1)
+		while (s1 && s1[++i] != 0)
+			tmp[i] = s1[i];
 	j = 0;
 	while (s2 && s2[j] != 0)
 		tmp[i++] = s2[j++];
