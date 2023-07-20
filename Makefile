@@ -6,7 +6,7 @@
 #    By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/12 01:54:25 by ciclo             #+#    #+#              #
-#    Updated: 2023/06/26 20:24:19 by Dugonzal         ###   ########.fr        #
+#    Updated: 2023/07/20 12:09:25 by Dugonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ num_dir		= 	ft_num/
 ft_num		=	max min
 
 gnl_dir		=	get_next_line/
-gnl			=	get_next_line get_next_line_utils
+gnl			=	get_next_line
 
 FTIS_DIR	=	ft_is/
 FTIS		=	ft_isalnum ft_isalpha ft_isascii ft_isdigit ft_isprint
