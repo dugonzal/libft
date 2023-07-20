@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 14:51:50 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/07/20 12:06:49 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/07/20 12:36:28 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 char	*read_line(char *str, int fd)
 {
 	ssize_t	rd;
-	
 	char	*tmp;
 
 	tmp = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
@@ -34,7 +33,7 @@ char	*read_line(char *str, int fd)
 		if (!str)
 			str = ft_strjoin("", tmp, 0);
 		else 
-			str = ft_strjoin(str, tmp, 1) ;
+			str = ft_strjoin(str, tmp, 1);
 		if (rd <= 0)
 			break ;
 	}
