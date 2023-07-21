@@ -6,7 +6,7 @@
 /*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 14:51:50 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/07/21 13:45:04 by dugonzal         ###   ########.fr       */
+/*   Updated: 2023/07/21 14:46:34 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ char	*next_line(char *str)
 	while (str[i])
 		tmp[j++] = str[++i];
 	tmp[j] = 0;
+	free (str);
 	return (tmp);
 }
 
