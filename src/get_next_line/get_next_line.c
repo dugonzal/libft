@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: dugonzal <dugonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 14:51:50 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/07/20 12:36:28 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/07/21 13:45:04 by dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,9 @@ char	*read_line(char *str, int fd)
 	ssize_t	rd;
 	char	*tmp;
 
-	tmp = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
+	tmp = (char *)ft_calloc(sizeof(char), BUFFER_SIZE + 1);
 	if (!tmp)
 		return (NULL);
-	tmp[0] = '\0';
 	while (!search (tmp, '\n'))
 	{
 		rd = read (fd, tmp, BUFFER_SIZE);
@@ -29,10 +28,10 @@ char	*read_line(char *str, int fd)
 			free (tmp);
 			return (NULL);
 		}
-		tmp[rd] = '\0';
-		if (!str)
+		tmp[rd] = 0;
+		if ((!str || str[0] == 0) && rd > 0)
 			str = ft_strjoin("", tmp, 0);
-		else 
+		else
 			str = ft_strjoin(str, tmp, 1);
 		if (rd <= 0)
 			break ;
@@ -84,11 +83,10 @@ char	*next_line(char *str)
 		free (str);
 		return (NULL);
 	}
-	tmp = (char *)malloc(sizeof(char) * ft_strlen(str) - i + 2);
+	tmp = (char *)ft_calloc(sizeof(char), ft_strlen(str) - i + 2);
 	if (!tmp)
 		return (NULL);
 	j = 0;
-	*tmp = 0;
 	while (str[i])
 		tmp[j++] = str[++i];
 	tmp[j] = 0;
